@@ -1,6 +1,4 @@
 import React from 'react';
-import FlowTest from './FlowTest';
-import CustomNodeExample from './TestNode';
 import FlowContainer from './FlowContainer';
 import '../styles.scss';
 

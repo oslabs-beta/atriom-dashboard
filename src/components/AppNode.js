@@ -11,7 +11,8 @@ const styles = {
   justifyContent: 'center',
 };
 
-export default function AppNode() {
+export default function AppNode(props) {
+  console.log(props);
   return (
     <div style={styles}>
       <h4>App Node</h4>

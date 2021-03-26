@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ColorProvider from './contexts/ColorProvider';
 
 import App from './components/App';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <ColorProvider>
+    <App />
+  </ColorProvider>,
+  document.getElementById('app')
+);
