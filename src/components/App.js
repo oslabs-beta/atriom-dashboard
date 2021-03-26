@@ -1,9 +1,11 @@
 import React from 'react';
+import NavBar from './NavBar';
+import "../styles/NavBar.scss"
 
 export default function App() {
   return (
-    <div>
-      <h1>App</h1>
-    </div>
+    <React.Fragment>
+      <NavBar />
+    </React.Fragment>
   );
 }

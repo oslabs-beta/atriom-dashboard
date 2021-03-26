@@ -1,0 +1,64 @@
+$font-standard: rgb(119, 119, 119);
+$font-hover: rgb(53, 53, 53);
+
+body {
+  margin: 0;
+}
+
+.NavBar {
+  display: flex;
+  // font-family: 'Roboto', sans-serif;
+  // ul {
+  //   li {
+  //     list-style: none;
+  //     display: inline-flex;
+  //     padding-right: 30px;
+  //   }
+  // }
+  flex-grow: 1;
+  background-color: black;
+}
+
+.menuIcon {
+  color: $font-standard;
+}
+
+.menuIcon:hover{
+  color: $font-hover;
+}
+
+.navLinks a{
+  text-decoration: none;
+  color: $font-standard;
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 30px;
+  padding-right: 20px;
+
+  &:hover {
+    color: $font-hover;
+  }
+}
+
+.searchInput {
+  margin-right: 26px;
+}
+
+.search {
+  width: 240px;
+  display: flex;
+  margin-left: auto;
+  background-color: rgb(228, 228, 228);
+  align-items: center;
+  padding: 2px;
+  border-radius: 20px;
+}
+
+.searchIcon {
+  margin: auto 10px;
+  color: rgb(148, 148, 148);
+}
+
+#nbLogo {
+  color: red;
+}
