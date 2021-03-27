@@ -1,6 +1,6 @@
 import React from 'react';
 
-const styles = {
+const defaultStyles = {
   color: 'white',
   backgroundColor: 'grey',
   height: '150px',
@@ -11,10 +11,14 @@ const styles = {
   justifyContent: 'center',
 };
 
-export default function AppNode() {
+export default function AppNode(props) {
+  // console.log(props);
+  const { data } = props;
   return (
-    <div style={styles}>
-      <h4>App Node</h4>
+    <div style={{ ...defaultStyles, backgroundColor: data.color }}>
+      <a href="https://www.google.com">
+        <h4>{data.label}</h4>
+      </a>
     </div>
   );
 }
