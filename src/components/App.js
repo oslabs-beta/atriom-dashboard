@@ -1,9 +1,12 @@
 import React from 'react';
 
+import FlowContainer from './FlowContainer';
+import '../styles.scss';
+
 export default function App() {
   return (
     <div>
-      <h1>App</h1>
+      <FlowContainer />
     </div>
   );
 }
