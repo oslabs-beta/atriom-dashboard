@@ -1,4 +1,4 @@
-export default [
+const appData = [
   {
     dependencies: [
       { name: 'bootstrap', version: '4.5' },
@@ -418,3 +418,126 @@ export default [
     _id: 'WtphgyCkdFlaIga1',
   },
 ];
+
+// const locations = [
+//   { x: 135, y: 0 },
+//   { x: 230, y: 40 },
+//   { x: 270, y: 135 },
+//   { x: 230, y: 230 },
+//   { x: 135, y: 270 },
+//   { x: 40, y: 230 },
+//   { x: 0, y: 135 },
+//   { x: 40, y: 40 },
+// ];
+
+// const colors = ['red', 'blue', 'pink', 'orange'];
+
+// Returns an object. Keys are application ids and values are color strings
+// const createColorMap = (apps, colors) => {
+//   return apps.reduce((colorMap, app, i) => {
+//     colorMap[app.id] = colors[i];
+//     return colorMap;
+//   }, {});
+// };
+
+// const colorMap = createColorMap(appData, colors);
+// console.log(colorMap);
+
+// const convertModules = (mods) => {
+//   return mods.map((mod, i) => {
+//     const flowObj = { ...mod };
+
+//     // Add React Flow Properties
+//     flowObj.type = 'ModuleNode';
+//     flowObj.data = { label: mod.name };
+//     flowObj.position = locations[i];
+
+//     flowObj.data.color = colorMap[mod.applicationID];
+//     console.log(flowObj.data.color);
+
+//     return flowObj;
+//   });
+// };
+
+const convertAppObj = (data, colorMap) =>
+  data.map((app, i) => {
+    const { dependencies, devDependencies, id, name, consumes, modules } = app;
+    const appFlowObj = { id, dependencies, devDependencies };
+
+    // Add React Flow Properties
+    appFlowObj.type = 'AppContainer';
+    appFlowObj.position = locations[i];
+    appFlowObj.data = { label: name };
+    appFlowObj.data.moduleNodes = convertModules(modules);
+    appFlowObj.data.consumesNodes = convertModules(consumes);
+
+    appFlowObj.data.color = colorMap[app.id];
+    appFlowObj.link = `/apps/${id}`;
+
+    return appFlowObj;
+  });
+
+console.log(convertAppObj(appData));
+
+const flow = {
+  id: 'checkout',
+  type: 'AppContainer',
+  data: {
+    label: '<idFromApp>',
+    moduleNodes: [],
+  },
+  consumes: [
+    {
+      consumingApplicationID: 'checkout',
+      applicationID: 'home',
+      name: 'Frame',
+      usedIn: [
+        {
+          file: 'src/CheckoutPage.jsx',
+          url: 'http://github.com/src/CheckoutPage.jsx',
+        },
+      ],
+    },
+    {
+      consumingApplicationID: 'checkout',
+      applicationID: 'search',
+      name: 'products',
+      usedIn: [
+        {
+          file: 'src/CheckoutContent.jsx',
+          url: 'http://github.com/src/CheckoutContent.jsx',
+        },
+      ],
+    },
+  ],
+  modules: [
+    {
+      id: 'checkout:Checkout',
+      name: 'Checkout',
+      applicationID: 'checkout',
+      requires: [],
+      file: './src/CheckoutContent',
+    },
+    {
+      id: 'checkout:AddToCart',
+      name: 'AddToCart',
+      applicationID: 'checkout',
+      requires: [],
+      file: './src/AddToCart',
+    },
+    {
+      id: 'checkout:checkout',
+      name: 'checkout',
+      applicationID: 'checkout',
+      requires: [],
+      file: './src/checkout',
+    },
+    {
+      id: 'checkout:store',
+      name: 'store',
+      applicationID: 'checkout',
+      requires: ['redux', 'redux-thunk'],
+      file: './src/store',
+    },
+  ],
+};
