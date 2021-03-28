@@ -2,14 +2,11 @@ import React from 'react';
 import ReactFlow, { ReactFlowProvider } from 'react-flow-renderer';
 import AppNode from './AppNode';
 import ModuleNode from './ModuleNode';
-import AppsContext from '../contexts/AppsContext';
 
 const onLoad = (reactFlowInstance) => {
   // reactFlowInstance.fitView();
-  // setTimeout(() => reactFlowInstance.fitView(), 0);
+  setTimeout(() => reactFlowInstance.fitView(), 0);
 };
-
-const onElementClick = (event, element) => console.log('click', element);
 
 export default (props) => {
   const { id, data } = props;
@@ -41,7 +38,6 @@ export default (props) => {
           nodesDraggable={false}
           zoomOnScroll={false}
           onLoad={onLoad}
-          onElementClick={onElementClick}
         />
       </ReactFlowProvider>
     </div>

@@ -4,3 +4,11 @@
   box-sizing: border-box;
   font-family: 'Kiwi Maru', serif;
 }
+
+.AppNode:hover {
+  cursor: grab;
+}
+
+.AppNode-label:hover {
+  cursor: pointer;
+}

@@ -14,6 +14,9 @@ const nodeTypes = {
 const FlowContainer = () => {
   const apps = useContext(AppsContext);
 
+  const onNodeDragStart = (event, node) => console.log('drag start', node);
+  const onNodeDragStop = (event, node) => console.log('drag stop', node);
+
   const onLoad = (reactFlowInstance) => {
     setTimeout(() => reactFlowInstance.fitView(), 0);
     // reactFlowInstance.fitView();
@@ -28,7 +31,13 @@ const FlowContainer = () => {
       }}
     >
       <ReactFlowProvider>
-        <ReactFlow elements={apps} nodeTypes={nodeTypes} onLoad={onLoad}>
+        <ReactFlow
+          elements={apps}
+          nodeTypes={nodeTypes}
+          onLoad={onLoad}
+          onNodeDragStart={onNodeDragStart}
+          onNodeDragStop={onNodeDragStop}
+        >
           <Controls />
         </ReactFlow>
       </ReactFlowProvider>
