@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Home from './Home';
 import AppPage from './AppPage';
-import FlowContainer from './FlowContainer';
+import FlowContainer from './flow/FlowContainer';
 import AppsContext from '../contexts/AppsContext';
 import '../styles.scss';
 

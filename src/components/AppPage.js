@@ -1,6 +1,4 @@
 import React from 'react';
-//import Navbar from ./Navbar
-import { withRouter } from 'react-router-dom';
 import Modules from './Modules.js';
 import AppImage from './AppImage.js';
 import Consumes from './Consumes.js';

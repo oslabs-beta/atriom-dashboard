@@ -19,6 +19,7 @@ export default function AppNode(props) {
   const mouseDownCoords = (e) => {
     window.checkForDrag = e.clientX;
   };
+
   const clickOrDrag = (e) => {
     const mouseUp = e.clientX;
     if (mouseUp < window.checkForDrag + 1 && mouseUp > window.checkForDrag - 1)

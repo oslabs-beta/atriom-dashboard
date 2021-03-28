@@ -4,8 +4,7 @@ import AppNode from './AppNode';
 import ModuleNode from './ModuleNode';
 
 const onLoad = (reactFlowInstance) => {
-  // reactFlowInstance.fitView();
-  setTimeout(() => reactFlowInstance.fitView(), 0);
+  reactFlowInstance.fitView();
 };
 
 export default (props) => {
@@ -37,6 +36,7 @@ export default (props) => {
           nodeTypes={nodeTypes}
           nodesDraggable={false}
           zoomOnScroll={false}
+          zoomOnPinch={false}
           onLoad={onLoad}
         />
       </ReactFlowProvider>
