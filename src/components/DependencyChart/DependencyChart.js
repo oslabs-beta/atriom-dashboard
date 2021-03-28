@@ -2,13 +2,12 @@ import React, { useMemo, useState, useEffect, useContext, useCallback } from 're
 import DependencyTable from './DependencyTable';
 import AppsContext from '../../contexts/AppsContext';
 import tableData from '../../dummy-data';
+import './DependencyChart.scss';
 
 function DependencyChart () {
 
- //const data = useContext(AppsContext);
- const data = tableData;
+const data = useContext(AppsContext);
 
-console.log('Data: ', data);
 
   const appList = [];
   for (let i = 0; i < data.length; i++) {
@@ -18,6 +17,22 @@ console.log('Data: ', data);
         accessor: `${data[i].id}`
     })
   }
+
+  const columns = [
+    {
+      Header: " ",
+      columns: [
+        {
+          Header: "Dependencies",
+          accessor: "name"
+        }
+      ]
+    },
+    {
+      Header: "Version by Application",
+      columns: appList
+    }
+  ];
 
   const depList = [];
   const deps = [];
@@ -39,7 +54,6 @@ for (let i = 0; i < deps.length; i++) {
   for (let i = 0; i < appList.length; i++) {
     let index = 0;
     for (let j = 0; j < depList.length; j++) {
-      console.log('i: ', i, '  j: ', j, '  index: ', index);
       if (!data[i].dependencies[index]) depList[j][data[i].id] = "N/A";
       else if (depList[j].name === data[i].dependencies[index].name) {
         depList[j][data[i].id] = data[i].dependencies[index].version;
@@ -50,28 +64,6 @@ for (let i = 0; i < deps.length; i++) {
     }
   }
 
-console.log('depList: ', depList)
- 
-
-  const columns = useMemo(
-    () => [
-      {
-        Header: " ",
-        columns: [
-          {
-            Header: "Dependencies",
-            accessor: "name"
-          }
-        ]
-      },
-      {
-        Header: "Version by Application",
-        columns: appList
-      }
-    ],
-    []
-  );
-  
 
   if (data.length && columns.length) 
   return (
