@@ -6,6 +6,7 @@
   table {
     border-collapse: collapse;
     overflow-x: auto;
+    width: 80%;
   }
   th {
     border: 1px solid black;
@@ -16,7 +17,7 @@
     padding-right: 30px;
   }
   tr {
-    
+    background: gray;
   }
   td {
     border: 1px solid black;

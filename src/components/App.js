@@ -14,11 +14,10 @@ const App = () => {
       <div className="App">
         {/* <Navbar /> */}
         <Switch>
-          <Route path="/" exact component={DependencyChart} />
+          <Route path="/" exact component={Home} />
           <Route path="/app/:id" component={AppPage} />
           <Route path="/home" component={FlowContainer} />
-          {/* <Route path="/module/:id" component={ModulePage} />
-          <Route path="/dependencies" component={DependenciesPage} /> */}
+          <Route path="/dependencies" component={DependencyChart} />
         </Switch>
       </div>
     </Router>
