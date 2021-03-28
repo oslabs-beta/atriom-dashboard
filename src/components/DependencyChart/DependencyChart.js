@@ -1,7 +1,6 @@
 import React, { useMemo, useState, useEffect, useContext, useCallback } from 'react';
 import DependencyTable from './DependencyTable';
 import AppsContext from '../../contexts/AppsContext';
-import tableData from '../../dummy-data';
 import './DependencyChart.scss';
 
 function DependencyChart () {
