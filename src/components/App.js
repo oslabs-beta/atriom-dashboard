@@ -12,7 +12,7 @@ import '../styles/AppPage.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
-  const apps = useContext(AppsContext);
+  const { apps } = useContext(AppsContext);
 
   const renderAppRoutes = () =>
     apps.map((app, i) => (
@@ -27,6 +27,7 @@ const App = () => {
         {/* <Navbar /> */}
         <Switch>
           <Route path="/" exact component={DropZoneContainer} />
+          {/* <Route path="/" exact component={FlowContainer} /> */}
           <Route path="/home" exact component={FlowContainer} />
           {renderAppRoutes()}
           <Route path="/dependencies" component={DependencyChart} />
