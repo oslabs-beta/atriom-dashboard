@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-const Home = () => {
+const Home = ({ history }) => {
+  history.push('/home');
   return (
     <div className="homePage">
       <h1>Home Page</h1>
