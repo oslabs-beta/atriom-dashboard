@@ -1,4 +1,11 @@
 import React from 'react';
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+
+import '../dummy-data';
 //import Navbar from ./Navbar
 import Modules from './Modules.js';
 import AppImage from './AppImage.js';
@@ -9,19 +16,14 @@ import DirectDependecies from './DirectDependencies.js';
 const AppPage = () => {
   return (
     <div id="infoContainer">
-      {/* <Navbar />  */}
-      <h2>App name</h2>
-      <div className="row">
-        <Modules />
-        <AppImage />
-      </div>
-      <div className="row">
-        <Consumes />
-      </div>
-      <div className="row">
-        <Shared />
-        <DirectDependecies />
-      </div>
+      <h1>App Info Tables</h1>
+      <VerticalTimeline>
+        {timelineElements.map((element) => {
+          return (
+            <VerticalTimelineElement>key={element.key}</VerticalTimelineElement>
+          );
+        })}
+      </VerticalTimeline>
     </div>
   );
 };
