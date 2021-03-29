@@ -1,4 +1,4 @@
-import "../styles/MenuContents.scss"
+import "../../styles/MenuContents.scss"
 import React from 'react';
 import IconButton from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';

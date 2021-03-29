@@ -37,18 +37,25 @@ body {
 
 .search {
   width: 240px;
-  height: 28px;
+  // height: 28px;
   display: flex;
   margin-left: auto;
   background-color: rgb(228, 228, 228);
+  color: $font-standard;
   align-items: center;
   padding: 2px;
   border-radius: 20px;
+
+  &:hover {
+    background-color: rgb(214, 214, 214)
+  }
 }
 
 .searchIcon {
   margin: auto 10px;
-  color: rgb(148, 148, 148);
+  padding-top: 2px;
+  color: $font-standard;
+
 }
 
 #nbLogo {

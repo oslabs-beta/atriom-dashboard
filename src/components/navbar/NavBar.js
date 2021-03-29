@@ -1,5 +1,6 @@
-import "../styles/NavBar.scss"
+import "../../styles/NavBar.scss"
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -16,10 +17,10 @@ const NavBar = () => {
         <Toolbar variant="dense">
           <DropMenu id="drop-menu"/>
           <Typography className="navLinks">
-            <a href="/">Dashboard</a>
+            <Link to="/">Dashboard</Link>
           </Typography>
           <Typography className="navLinks" noWrap>
-            <a href="/">Dependency Chart</a>
+            <Link to="/dependencies">Dependency Chart</Link>
           </Typography>
           <Search />
         </Toolbar>

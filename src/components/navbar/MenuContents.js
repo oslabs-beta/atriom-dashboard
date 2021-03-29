@@ -1,4 +1,4 @@
-import "../styles/MenuContents.scss"
+import "../../styles/MenuContents.scss"
 import React from 'react';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
