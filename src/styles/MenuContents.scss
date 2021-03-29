@@ -1,11 +1,36 @@
+$font-standard: rgb(119, 119, 119);
+$font-hover: rgb(53, 53, 53);
+
 .MenuContents {
-  width: 220px;
+  width: 340px;
+  // height: 200px;
+  color: $font-standard;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  margin: 5px 20px;
+  border-radius: 5px;
 }
 
-#nested-list-subheader {
+.MenuContentButton:hover {
+  color: $font-hover;
+}
+
+.category:hover {
+  color: $font-hover;
+}
+
+#drop-menu-subheader {
   font-size: 16px;
+  background-color: rgb(223, 223, 223);
 }
 
 .listItem {
   padding-left: 14px;
+}
+
+// #drop-menu-container ul{
+//   padding-top: 0px;
+// }
+
+.grow-transition {
+  // transition: 400;
 }

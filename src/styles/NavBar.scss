@@ -5,19 +5,10 @@ body {
   margin: 0;
 }
 
-.NavBar {
-  display: flex;
-  // font-family: 'Roboto', sans-serif;
-  // ul {
-  //   li {
-  //     list-style: none;
-  //     display: inline-flex;
-  //     padding-right: 30px;
-  //   }
-  // }
-  flex-grow: 1;
-  background-color: black;
-}
+// .NavBar {
+//   display: flex;
+//   font-family: 'Roboto', sans-serif;
+// }
 
 .menuIcon {
   color: $font-standard;

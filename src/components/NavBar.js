@@ -10,6 +10,22 @@ import DropMenu from './DropMenu'
 
 
 const NavBar = () => {
+  return (
+    <div className="NavBar">
+      <AppBar position="static" color="inherit">
+        <Toolbar variant="dense">
+          <DropMenu id="drop-menu"/>
+          <Typography className="navLinks">
+            <a href="/">Dashboard</a>
+          </Typography>
+          <Typography className="navLinks" noWrap>
+            <a href="/">Dependency Chart</a>
+          </Typography>
+          <Search />
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
   // return (
   //   <div className="NavBar">
   //     <ul>
@@ -25,22 +41,6 @@ const NavBar = () => {
   //     </ul>
   //   </div>
   // )
-  return (
-    <div className="NavBar">
-      <AppBar position="static" color="inherit">
-        <Toolbar variant="dense">
-          <DropMenu />
-          <Typography className="navLinks">
-            <a href="/">Dashboard</a>
-          </Typography>
-          <Typography className="navLinks" noWrap>
-            <a href="/">Dependenct Chart</a>
-          </Typography>
-          <Search />
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
 }
 
 export default NavBar;
