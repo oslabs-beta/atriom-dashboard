@@ -27,9 +27,10 @@ export default function DropMenu() {
 
   // const open = Boolean(anchorEl);
 
-  const handleClose = () => {
-    // setAnchorEl(null);
+  const handleClose = (event) => {
+    setAnchorEl(null);
     setOpen(false);
+    // console.log('this is the anchorEl after handleClose', anchorEl)
   };
 
   // return (
@@ -50,12 +51,12 @@ export default function DropMenu() {
   // );
 
   return (
+    <ClickAwayListener onClickAway={handleClose}>
     <div>
-    {/* <ClickAwayListener onClickAway={handleClose}> */}
       <IconButton edge="start" className="menuButton" color="inherit" aria-label="dropMenu" onClick={handleClick}>
         <MenuIcon className="menuIcon"/>
       </IconButton>
-      <Popper
+      {open ? (<Popper
         id="drop-menu-container"
         open={open}
         anchorEl={anchorEl}
@@ -78,7 +79,8 @@ export default function DropMenu() {
             </div>
         </Grow>
       </Popper>
-    {/* </ClickAwayListener> */}
+      ) : null }
     </div>
+    </ClickAwayListener>
   )
 }
