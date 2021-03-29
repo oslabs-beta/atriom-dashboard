@@ -2,14 +2,15 @@ import React from 'react';
 import ReactFlow, { ReactFlowProvider } from 'react-flow-renderer';
 import AppNode from './AppNode';
 import ModuleNode from './ModuleNode';
-import AppsContext from '../contexts/AppsContext';
 
 const onLoad = (reactFlowInstance) => {
-  // reactFlowInstance.fitView();
-  // setTimeout(() => reactFlowInstance.fitView(), 0);
+  reactFlowInstance.fitView({ padding: 0.1 });
 };
 
-const onElementClick = (event, element) => console.log('click', element);
+const nodeTypes = {
+  AppNode,
+  ModuleNode,
+};
 
 export default (props) => {
   const { id, data } = props;
@@ -22,26 +23,16 @@ export default (props) => {
     position: { x: 100, y: 100 },
   };
 
-  const nodeTypes = {
-    AppNode,
-    ModuleNode,
-  };
-
   return (
-    <div
-      style={{
-        height: '375px',
-        width: '375px',
-      }}
-    >
+    <div className="AppContainer">
       <ReactFlowProvider>
         <ReactFlow
           elements={[appNode, ...data.consumesNodes]}
           nodeTypes={nodeTypes}
           nodesDraggable={false}
           zoomOnScroll={false}
+          zoomOnPinch={false}
           onLoad={onLoad}
-          onElementClick={onElementClick}
         />
       </ReactFlowProvider>
     </div>

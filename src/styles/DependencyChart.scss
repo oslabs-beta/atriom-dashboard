@@ -1,0 +1,31 @@
+.DependencyChart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  table {
+    border-collapse: collapse;
+    overflow-x: auto;
+    width: 80%;
+  }
+  th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  tr {
+    background: gray;
+  }
+  td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
