@@ -2,6 +2,7 @@ import React from 'react';
 import Home from './Home';
 import AppPage from './AppPage';
 import FlowContainer from './FlowContainer';
+import DependencyChart from './DependencyChart/DependencyChart';
 import '../styles.scss';
 
 import '../styles/AppPage.scss';
@@ -16,8 +17,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/app/:id" component={AppPage} />
           <Route path="/home" component={FlowContainer} />
-          {/* <Route path="/module/:id" component={ModulePage} />
-          <Route path="/dependencies" component={DependenciesPage} /> */}
+          <Route path="/dependencies" component={DependencyChart} />
         </Switch>
       </div>
     </Router>
