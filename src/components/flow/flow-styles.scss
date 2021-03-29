@@ -1,0 +1,63 @@
+.FlowContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: lightblue;
+}
+
+.AppContainer {
+  height: 375px;
+  width: 375px;
+}
+
+.AppNode {
+  background-color: grey;
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ModuleNode {
+  height: 80px;
+  width: 80px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  p {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.ModuleNode-file {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.AppKey {
+  border: 1px solid black;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 3px 5px;
+}
+
+.AppKey-key {
+  display: flex;
+  margin: 3px 0;
+}
+
+.AppKey-color {
+  width: 45px;
+  height: 25px;
+  border-radius: 10px;
+}

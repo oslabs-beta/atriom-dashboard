@@ -4,7 +4,12 @@ import AppNode from './AppNode';
 import ModuleNode from './ModuleNode';
 
 const onLoad = (reactFlowInstance) => {
-  reactFlowInstance.fitView();
+  reactFlowInstance.fitView({ padding: 0.1 });
+};
+
+const nodeTypes = {
+  AppNode,
+  ModuleNode,
 };
 
 export default (props) => {
@@ -18,18 +23,10 @@ export default (props) => {
     position: { x: 100, y: 100 },
   };
 
-  const nodeTypes = {
-    AppNode,
-    ModuleNode,
-  };
+  console.log(props);
 
   return (
-    <div
-      style={{
-        height: '375px',
-        width: '375px',
-      }}
-    >
+    <div className="AppContainer">
       <ReactFlowProvider>
         <ReactFlow
           elements={[appNode, ...data.consumesNodes]}

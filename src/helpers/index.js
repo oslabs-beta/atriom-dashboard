@@ -8,10 +8,19 @@ export const convertAppObj = (apps, colorMap) =>
     // Add React Flow Properties
     appFlowObj.type = 'AppContainer';
     appFlowObj.position = appLocations[i];
-    appFlowObj.data = { label: name };
+    appFlowObj.data = {
+      label: name,
+      dependencies,
+      devDependencies,
+      id,
+      name,
+      modules,
+      consumes,
+    };
     appFlowObj.data.consumesNodes = convertConsumedModules(consumes, colorMap);
 
     appFlowObj.data.color = colorMap[app.id];
+    appFlowObj.data.link = `/apps/${id}`;
     appFlowObj.link = `/apps/${id}`;
 
     return appFlowObj;
@@ -19,11 +28,18 @@ export const convertAppObj = (apps, colorMap) =>
 
 export const convertConsumedModules = (mods, colorMap) =>
   mods.map((mod, i) => {
+    const { applicationID, consumingApplicationID, name, usedIn } = mod;
     const flowObj = { ...mod };
 
     // Add React Flow Properties
     flowObj.type = 'ModuleNode';
-    flowObj.data = { label: mod.name };
+    flowObj.data = {
+      label: mod.name,
+      applicationID,
+      consumingApplicationID,
+      name,
+      usedIn,
+    };
     flowObj.position = locations[i];
 
     // Add id property for consumes
