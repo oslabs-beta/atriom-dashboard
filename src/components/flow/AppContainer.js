@@ -23,8 +23,6 @@ export default (props) => {
     position: { x: 100, y: 100 },
   };
 
-  console.log(props);
-
   return (
     <div className="AppContainer">
       <ReactFlowProvider>

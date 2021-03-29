@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid blue',
+    border: '2px solid black',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     position: 'fixed',
@@ -76,24 +76,24 @@ function ModuleNode(props) {
               <IconButton aria-label="close" onClick={handleClose}>
                 <CloseIcon />
               </IconButton>
-              <h2>{props.data.name}</h2>
+              <h2>{data.name}</h2>
             </div>
 
             <p id="transition-modal-description">
               Shared by:{' '}
-              <Link to={`/app/${props.data.applicationID}`}>
-                {props.data.applicationID}{' '}
+              <Link to={`/app/${data.applicationID}`}>
+                {data.applicationID}{' '}
               </Link>
             </p>
             <p id="transition-modal-description">
               Consumed by:{' '}
-              <Link to={`/app/${props.data.consumingApplicationID}`}>
-                {props.data.consumingApplicationID}
+              <Link to={`/app/${data.consumingApplicationID}`}>
+                {data.consumingApplicationID}
               </Link>
             </p>
-            <p id="transition-modal-description">File</p>
+            <p id="transition-modal-description">File:</p>
             <ul>
-              {props.data.usedIn.map((item, i) => (
+              {data.usedIn.map((item, i) => (
                 <li key={`usedIn${i}`} className="ModuleNode-file">
                   {item.file}
                 </li>
