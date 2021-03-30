@@ -15,7 +15,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Modules from './Modules';
 
 const App = () => {
-  const apps = useContext(AppsContext);
+  const { apps } = useContext(AppsContext);
 
   const renderAppRoutes = () =>
     apps.map((app, i) => (
@@ -23,16 +23,20 @@ const App = () => {
         <AppPage app={app} />
       </Route>
     ));
-
+  //console.log(apps);
   return (
     <Router>
       <div className="App">
         {/* <Navbar /> */}
         <Switch>
-          <Route path="/" exact component={FlowContainer} />
+          {apps.length ? (
+            <Route path="/" exact>
+              <AppPage app={apps[0]} />
+            </Route>
+          ) : null}
           <Route path="/home" exact component={FlowContainer} />
           {renderAppRoutes()}
-          <Route path="/dependencies" component={DependencyChart} />
+          <Route path="/dependecies" component={DependencyChart} />
         </Switch>
       </div>
     </Router>

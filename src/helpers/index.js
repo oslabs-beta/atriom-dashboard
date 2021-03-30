@@ -2,8 +2,21 @@ import locations, { appLocations } from './locations';
 
 export const convertAppObj = (apps, colorMap) =>
   apps.map((app, i) => {
-    const { dependencies, devDependencies, id, name, consumes, modules } = app;
-    const appFlowObj = { id, dependencies, devDependencies, modules };
+    const {
+      dependencies,
+      devDependencies,
+      id,
+      name,
+      consumes,
+      modules,
+      overrides,
+    } = app;
+    const appFlowObj = {
+      id,
+      dependencies,
+      devDependencies,
+      modules,
+    };
 
     // Add React Flow Properties
     appFlowObj.type = 'AppContainer';
@@ -16,6 +29,7 @@ export const convertAppObj = (apps, colorMap) =>
       name,
       modules,
       consumes,
+      overrides,
     };
     appFlowObj.data.consumesNodes = convertConsumedModules(consumes, colorMap);
 

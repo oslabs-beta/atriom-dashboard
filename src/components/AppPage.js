@@ -13,30 +13,38 @@ import Shared from './Shared.js';
 import DirectDependecies from './DirectDependencies.js';
 
 const AppPage = (props) => {
-  console.log(props);
+  console.log('APP PAGE PROPS', props);
   const { app } = props;
   return (
     <div id="infoContainer">
-      <h1>App Info Tables</h1>
-      <VerticalTimeline>
+      <center>
+        <h1>App Info Tables</h1>
+      </center>
+      <br />
+      {/* <VerticalTimeline>
         {timelineElements.map((element) => {
           return (
             <VerticalTimelineElement>key={element.key}</VerticalTimelineElement>
           );
         })}
-      </VerticalTimeline>
+      </VerticalTimeline> */}
       {/* <Navbar />  */}
-      <h2>App name</h2>
-      <div className="row">
+      <h2>{props.app.data.name}</h2>
+      <br />
+      <div className="appPageTable">
         <Modules modules={props.app.modules} />
-        <AppImage />
       </div>
-      <div className="row">
+      <br />
+      <div className="appPageTable">
         <Consumes consumes={props.app.data.consumesNodes} />
       </div>
-      <div className="row">
-        <Shared />
-        <DirectDependecies depencies={app.depencies} />
+      <br />
+      <div className="appPageTable">
+        <Shared shared={props.app.data.overrides} />
+      </div>
+      <br />
+      <div className="appPageTable">
+        <DirectDependecies dependencies={props.app.data.dependencies} />
       </div>
     </div>
   );

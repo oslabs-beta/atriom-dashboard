@@ -16,7 +16,7 @@ const appKeyEl = {
 };
 
 const FlowContainer = () => {
-  const apps = useContext(AppsContext);
+  const { apps } = useContext(AppsContext);
 
   const onLoad = useCallback((instance) => {
     instance.fitView({ padding: 0.05 });

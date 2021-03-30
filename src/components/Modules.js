@@ -8,42 +8,10 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import AppsContext from '../contexts/AppsContext';
 
-function createData(firstName, lastName, age) {
-  return { firstName, lastName, age };
-}
-
-let app = 'Checkout';
-
-//console.log(data.modules);
-//each row should be an object with key:"value" pairs of the data
-const rows = [
-  createData('james', 'smith', 20),
-  createData('mary', 'jones', 30),
-  createData('may', 'wong', 30),
-  createData('maureen', 'onchiri', 24),
-];
-//map through data
-// data.map(data => {
-//   for (const prop in data) {
-//     if (prop.modules.hasOwnProperty('name'))
-//   }
-// })
-//for in loop through each element
-//if element has property of modules with a property of modules.name that equals app name, invoke create data
-//invoke create data on
-
-// console.log(data);
-
-const Modules = () => {
+const Modules = (props) => {
   const apps = useContext(AppsContext);
-  console.log(apps);
-  const renderModules = () => {
-    return apps.map((app) => {
-      <TableCell component="th" scope="row">
-        {row.firstName}
-      </TableCell>;
-    });
-  };
+  console.log('MODULES', props.modules);
+
   return (
     <TableContainer component={Paper}>
       <Table size="small">
@@ -55,13 +23,13 @@ const Modules = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.firstName}>
+          {props.modules.map((module) => (
+            <TableRow key={module.id}>
               <TableCell component="th" scope="row">
-                {row.firstName}
+                {module.name}
               </TableCell>
-              <TableCell>{row.lastName}</TableCell>
-              <TableCell align="right">{row.age}</TableCell>
+              <TableCell>{module.file}</TableCell>
+              <TableCell align="right">{module.requires}</TableCell>
             </TableRow>
           ))}
         </TableBody>
