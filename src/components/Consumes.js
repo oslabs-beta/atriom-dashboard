@@ -14,6 +14,9 @@ const Consumes = (props) => {
 
   return (
     <TableContainer component={Paper}>
+      <center>
+        <h4>Consumes</h4>
+      </center>
       <Table size="small">
         <TableHead>
           <TableRow>

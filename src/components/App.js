@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import NavBar from './navbar/NavBar';
 import Home from './Home';
 
 import AppPage from './AppPage';
@@ -27,14 +28,14 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        {/* <Navbar /> */}
+        {/* <NavBar /> */}
         <Switch>
-          {/* {apps.length ? (
+          {apps.length ? (
             <Route path="/" exact>
               <AppPage app={apps[0]} />
             </Route>
-          ) : null} */}
-          <Route path="/" exact component={FlowContainer} />
+          ) : null}
+          <Route path="/home" exact component={FlowContainer} />
           {renderAppRoutes()}
           <Route path="/dependecies" component={DependencyChart} />
         </Switch>

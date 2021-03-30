@@ -19,6 +19,9 @@ const Shared = (props) => {
 
   return (
     <TableContainer component={Paper}>
+      <center>
+        <h4>Shared</h4>
+      </center>
       <Table size="small">
         <TableHead>
           <TableRow>

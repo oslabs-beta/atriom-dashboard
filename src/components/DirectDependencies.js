@@ -14,6 +14,9 @@ const DirectDependecies = (props) => {
 
   return (
     <TableContainer component={Paper}>
+      <center>
+        <h4>Direct Dependencies</h4>
+      </center>
       <Table size="small">
         <TableHead>
           <TableRow>

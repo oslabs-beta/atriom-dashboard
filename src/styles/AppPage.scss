@@ -26,3 +26,21 @@
   padding: 25px;
   width: 100%;
 }
+
+#appInfoContainer {
+  margin-left: 150px;
+  margin-right: 150px;
+  h2 {
+    margin-left: 100px;
+  }
+}
+.appPage {
+  background-color: #242c2e;
+  color: #f5f5f5;
+  font-family: Roboto, Helvetica, sans-serif;
+
+  h1,
+  h2 {
+    color: #63d4e7;
+  }
+}

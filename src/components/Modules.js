@@ -14,6 +14,9 @@ const Modules = (props) => {
 
   return (
     <TableContainer component={Paper}>
+      <center>
+        <h4>Modules</h4>
+      </center>
       <Table size="small">
         <TableHead>
           <TableRow>
