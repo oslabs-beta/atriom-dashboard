@@ -1,5 +1,6 @@
 import "../../styles/MenuContents.scss"
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -9,6 +10,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import AppListCollapse from './AppListCollapse'
 import ModuleListCollapse from './ModuleListCollapse'
+import TableChartIcon from '@material-ui/icons/TableChart';
 
 
 const MenuContents = () => {
@@ -29,8 +31,13 @@ const MenuContents = () => {
           </ListSubheader>
         }
       >
+      <Link to='/dependencies'>
+        <ListItem className="MenuContentButton" key='dependency-link'>
+          <TableChartIcon className="depIcon"/>
+          <ListItemText primary='Dependency Chart' className="listItem"/>
+        </ListItem>
+      </Link>
         <AppListCollapse />
-        <ModuleListCollapse />
       </List>
     </div>
   );

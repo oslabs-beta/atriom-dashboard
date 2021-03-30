@@ -1,18 +1,45 @@
 $font-standard: rgb(119, 119, 119);
 $font-hover: rgb(53, 53, 53);
+$dark: #1C2426;
+$light: #f5f5f5;
+$brand: #63d4e7;
+
+.ListCollapse {
+  span {
+  color: $light;
+  }
+
+  path {
+    color: $light;
+  }
+}
 
 .MenuContents {
   width: 340px;
   // height: 200px;
-  color: $font-standard;
+  color: $dark;
   box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   margin: 5px 20px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #242c2e;
+  z-index: 100;
+
+  // &:hover {
+  //   color: $font-hover;
+  // }
+
+  a {
+    text-decoration: none;
+  }
+
 }
 
-.MenuContentButton:hover {
-  color: $font-hover;
+.MenuContentButton {
+  color: $dark;
+
+  // &:hover {
+  //   background-color: #e7d689;
+  // }
 }
 
 .category:hover {
@@ -24,13 +51,33 @@ $font-hover: rgb(53, 53, 53);
   background-color: rgb(223, 223, 223);
 }
 
-.listItem {
-  padding-left: 14px;
+.MenuContentButton {
+  font-family: Roboto, Helvetica, sans-serif;
+  // padding-left: 14px;
 }
 
-// #drop-menu-container ul{
-//   padding-top: 0px;
-// }
+.listItem {
+  padding-left: 14px;
+
+  span {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    color: $light;
+    text-decoration: none;
+  }
+}
+
+.listIcon {
+  margin-left: 14px;
+}
+
+.depIcon path{
+  color: $light;
+}
+
+#drop-menu-container {
+  z-index: 10;
+}
 
 .grow-transition {
   // transition: 400;

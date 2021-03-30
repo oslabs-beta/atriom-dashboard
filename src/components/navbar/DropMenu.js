@@ -74,7 +74,7 @@ export default function DropMenu() {
           timeout={ 600 }
           className="grow-transition"
           >
-            <div>
+            <div style={{ zIndex: 10 }} >
               <MenuContents />
             </div>
         </Grow>

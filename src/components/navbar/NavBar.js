@@ -12,36 +12,21 @@ import DropMenu from './DropMenu'
 
 const NavBar = () => {
   return (
-    <div className="NavBar">
-      <AppBar position="static" color="inherit">
-        <Toolbar variant="dense">
+    <div className="NavBar-container">
+      <AppBar position="static" color="inherit" >
+        <Toolbar id="navbar">
           <DropMenu id="drop-menu"/>
           <Typography className="navLinks">
-            <Link to="/">Dashboard</Link>
+            <Link to="/">DASHBOARD</Link>
           </Typography>
           <Typography className="navLinks" noWrap>
-            <Link to="/dependencies">Dependency Chart</Link>
+            <Link to="/dependencies">DEPENDENCY CHART</Link>
           </Typography>
-          <Search />
+          {/* <Search /> */}
         </Toolbar>
       </AppBar>
     </div>
   );
-  // return (
-  //   <div className="NavBar">
-  //     <ul>
-  //       <li id="nbLogo">
-  //         *ATRIOM LOGO HERE*
-  //       </li>
-  //       <li>
-  //         Dashboard
-  //       </li>
-  //       <li>
-  //         Dependency Graph
-  //       </li>
-  //     </ul>
-  //   </div>
-  // )
 }
 
 export default NavBar;
