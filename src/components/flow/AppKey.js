@@ -2,11 +2,7 @@ import React, { useContext } from 'react';
 import AppsContext from '../../contexts/AppsContext';
 
 export default function AppKey() {
-<<<<<<< HEAD
-  const {apps} = useContext(AppsContext);
-=======
   const { apps } = useContext(AppsContext);
->>>>>>> main
 
   const renderKey = () =>
     apps.map((app, i) => (
