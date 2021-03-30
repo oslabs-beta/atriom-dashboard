@@ -1,7 +1,9 @@
 .FlowContainer {
-  height: 100vh;
+  height: calc(100vh - 64px);
   width: 100vw;
-  background-color: lightblue;
+  background-color: #1c2426;
+  // background: rgb(12,29,36);
+  // background: radial-gradient(circle, rgba(12,29,36,1) 0%, rgba(23,43,54,1) 100%);
 }
 
 .AppContainer {
@@ -61,3 +63,15 @@
   height: 25px;
   border-radius: 10px;
 }
+
+// $font-standard: rgb(119, 119, 119);
+// $font-hover: rgb(53, 53, 53);
+
+
+// .menuIcon {
+//   color: $font-standard;
+
+//   &:hover {
+//     color: $font-hover;
+//   }
+// }
