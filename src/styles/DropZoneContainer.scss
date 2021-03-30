@@ -1,13 +1,17 @@
+html {
+  background: #242c2e;
+}
+
 .title {
-  font-size: 2rem;
+  font-size: 6rem;
   text-align: center !important;
   margin-top: 10%;
-  color: #4aa1f3;
+  color: #63d4e7;
+  font-family: Roboto, Helvetica, sans-serif;
   font-weight: bold;
 }
 
 .content {
-  background-color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

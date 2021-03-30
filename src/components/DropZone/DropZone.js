@@ -75,11 +75,11 @@ const DropZone = (props) => {
                   setErrorMessage('');
                 }}
                 action={
-                  <Button color="inherit" sixe="small">
+                  <Button color="white" size="medium">
                     X
                   </Button>
                 }
-                variant="filled"
+                variant="outlined"
                 severity="error"
               >
                 {errorMessage}
