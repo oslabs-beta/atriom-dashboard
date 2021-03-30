@@ -3,7 +3,7 @@ import ReactFlow, { Controls } from 'react-flow-renderer';
 import AppContainer from './AppContainer';
 import AppsContext from '../../contexts/AppsContext';
 import AppKey from './AppKey';
-import { Link } from 'react-router-dom';
+import NavBar from '../navbar/NavBar';
 
 const nodeTypes = {
   AppContainer,
@@ -26,7 +26,7 @@ const FlowContainer = () => {
   if (apps.length)
     return (
       <div className="FlowContainer">
-        <Link to="/dependencies">asdfasdf</Link>
+        <NavBar />
         <ReactFlow
           elements={[...apps, appKeyEl]}
           nodeTypes={nodeTypes}
