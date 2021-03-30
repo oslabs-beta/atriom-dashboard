@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import NavBar from './navbar/NavBar';
 import Home from './Home';
 import AppPage from './AppPage';
 
@@ -12,7 +13,7 @@ import '../styles/AppPage.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
-  const apps = useContext(AppsContext);
+  const { apps } = useContext(AppsContext);
 
   const renderAppRoutes = () =>
     apps.map((app, i) => (
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        {/* <Navbar /> */}
+        {/* <NavBar /> */}
         <Switch>
           <Route path="/" exact component={FlowContainer} />
           <Route path="/home" exact component={FlowContainer} />

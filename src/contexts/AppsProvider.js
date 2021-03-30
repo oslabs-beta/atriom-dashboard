@@ -14,5 +14,5 @@ export default ({ children }) => {
   }, []);
 
   const { Provider } = AppsContext;
-  return <Provider value={apps}>{children}</Provider>;
+  return <Provider value={{apps, setApps}}>{children}</Provider>;
 };
