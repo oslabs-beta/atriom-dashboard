@@ -26,21 +26,7 @@ const FlowContainer = () => {
 
   if (apps.length)
     return (
-      <div className="FlowContainer">
-        <Link to="/">
-        <button onClick={() => {
-          setApps([]);
-
-        }}
-        >
-          Upload a new file
-            </button>
-            </Link>
-            <Link to="/dependencies">
-        <button>
-          Dependency Chart
-            </button>
-            </Link>
+      <div className="FlowContainer">  
         <ReactFlow
           elements={[...apps, appKeyEl]}
           nodeTypes={nodeTypes}
