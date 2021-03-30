@@ -1,0 +1,76 @@
+$font-standard: rgb(148, 148, 148);
+$font-hover: rgb(53, 53, 53);
+$dark: #1C2426;
+$light: #f5f5f5;
+$brand: #387580;
+$accent-yellow: #e0bf2b;
+
+body {
+  margin: 0;
+}
+
+// .NavBar {
+//   display: flex;
+//   background-color: red;
+// }
+
+#navbar {
+  background: #3b7f8b;
+}
+
+.menuIcon path{
+  color: $light;
+
+  // &:hover {
+  //   color: $accent-yellow;
+  // } testing hover feature
+}
+
+
+.navLinks a{
+  text-decoration: none;
+  color: $light;
+  font-weight: 400;
+  font-size: 16px;
+  padding-left: 30px;
+  padding-right: 20px;
+
+  &:hover {
+    color: $accent-yellow;
+    // font-weight: 500;
+    // font-size: 17px;
+  }
+}
+
+.searchInput {
+  margin-right: 26px;
+}
+
+.search {
+  width: 240px;
+  // height: 28px;
+  display: flex;
+  margin-left: auto;
+  background-color: rgba(228, 228, 228, 0.85);
+  color: $font-standard;
+  align-items: center;
+  padding: 2px;
+  border-radius: 20px;
+
+  // &:hover {
+  //   background-color: rgba(214, 214, 214, 0.3);
+  //   border: 2px solid $font-standard;
+  // }
+
+  // &:active {
+  //   background-color: rgba(214, 214, 214, 0.3);
+  //   border: $font-standard;
+  // }
+}
+
+.searchIcon {
+  margin: auto 10px;
+  padding-top: 2px;
+  color: $font-standard;
+
+}

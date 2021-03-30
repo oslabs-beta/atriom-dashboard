@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import NavBar from './navbar/NavBar';
 import Home from './Home';
 
 import AppPage from './AppPage';
@@ -27,7 +28,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        {/* <Navbar /> */}
+        {/* <NavBar /> */}
         <Switch>
           {apps.length ? (
             <Route path="/" exact>
