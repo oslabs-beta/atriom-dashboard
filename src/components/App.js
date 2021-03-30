@@ -29,12 +29,12 @@ const App = () => {
       <div className="App">
         {/* <Navbar /> */}
         <Switch>
-          {apps.length ? (
+          {/* {apps.length ? (
             <Route path="/" exact>
               <AppPage app={apps[0]} />
             </Route>
-          ) : null}
-          <Route path="/home" exact component={FlowContainer} />
+          ) : null} */}
+          <Route path="/" exact component={FlowContainer} />
           {renderAppRoutes()}
           <Route path="/dependecies" component={DependencyChart} />
         </Switch>
