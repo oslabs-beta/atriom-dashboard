@@ -1,1 +1,1 @@
-export default ['red', 'blue', 'pink', 'orange'];
+export default ['mediumvioletred', 'dodgerblue', 'pink', 'lemonchiffon', 'purple', 'darkseagreen', 'thistle', 'lavender'];

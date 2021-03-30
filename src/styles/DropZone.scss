@@ -1,0 +1,25 @@
+.container {
+  transform: translateY(-100%);
+  
+  .alert {
+    color: white;
+  }
+}
+
+.drop-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 800px;
+  height: 200px;
+  border: 4px dashed #4aa1f3;
+}
+
+.drop-message {
+  text-align: center;
+  color: #4aa1f3;
+  font-family: Arial;
+  font-size: 20px;
+}
+

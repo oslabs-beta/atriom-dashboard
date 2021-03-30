@@ -1,6 +1,5 @@
-import "../../styles/MenuContents.scss"
-import React, { useContext } from 'react';
-import AppsContext from '../../contexts/AppsContext';
+import '../../styles/MenuContents.scss';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -11,55 +10,37 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import DeviceHubIcon from '@material-ui/icons/DeviceHub';
 import EcoRoundedIcon from '@material-ui/icons/EcoRounded';
 
-const AppListCollapse = () => {
+const AppListCollapse = ({ apps }) => {
   const [open, setOpen] = React.useState(true);
-  const { apps } = useContext(AppsContext);
-
-  // console.log(apps)
+  console.log(apps);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
-  function ListItemLink(props) {
-    return <ListItem button component="a" {...props} />;
-  }
-
-  //...
-
-  // <ListItemLink href="#simple-list">
-  //   <ListItemText primary="Spam" />
-  // </ListItemLink>
-
-
-  const appList = apps.map((obj) => {
-    return (
-      <Link to={`/app/${obj.id}`} >
-      <ListItem className="MenuContentButton" key={obj.id}>
-        <EcoRoundedIcon className="listIcon" />
-        <ListItemText primary={obj.id} className="listItem"/>
-      </ListItem>
+  const renderAppList = () =>
+    apps.map((obj, i) => (
+      <Link to={`/app/${obj.id}`} key={`AppLink${i}`}>
+        <ListItem className="MenuContentButton" key={obj.id}>
+          <EcoRoundedIcon className="listIcon" />
+          <ListItemText primary={obj.id} className="listItem" />
+        </ListItem>
       </Link>
-    )
-  });
-
+    ));
   return (
     <div className="ListCollapse">
       <ListItem button onClick={handleClick}>
-        <DeviceHubIcon/>
-        <ListItemText primary="Applications" className="category listItem"/>
+        <DeviceHubIcon />
+        <ListItemText primary="Applications" className="category listItem" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {/* <ListItem button className="MenuContentButton">
-            <ListItemText primary="App1" className="listItem"/>
-          </ListItem> */}
-          {appList}
+          {renderAppList()}
         </List>
       </Collapse>
     </div>
-  )
-}
+  );
+};
 
 export default AppListCollapse;

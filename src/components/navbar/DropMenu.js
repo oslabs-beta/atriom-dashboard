@@ -13,7 +13,7 @@ import Grow from '@material-ui/core/Grow';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
 
-export default function DropMenu() {
+export default function DropMenu({apps}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
 
@@ -75,7 +75,7 @@ export default function DropMenu() {
           className="grow-transition"
           >
             <div style={{ zIndex: 10 }} >
-              <MenuContents />
+              <MenuContents apps={apps} />
             </div>
         </Grow>
       </Popper>
