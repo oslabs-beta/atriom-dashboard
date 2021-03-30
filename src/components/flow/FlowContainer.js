@@ -26,7 +26,6 @@ const FlowContainer = () => {
   if (apps.length)
     return (
       <div className="FlowContainer">
-        <NavBar />
         <ReactFlow
           elements={[...apps, appKeyEl]}
           nodeTypes={nodeTypes}
