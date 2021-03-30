@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   // font-family: 'Kiwi Maru', serif;
+  font-family: Roboto, Helvetica, sans-serif;
+  color: #f5f5f5;
 }
 
 // html {
@@ -11,6 +13,7 @@
 
 .AppNode:hover {
   cursor: grab;
+  box-shadow: 0 0 10px 1px #ece2bc;
 }
 
 .AppNode-label:hover {

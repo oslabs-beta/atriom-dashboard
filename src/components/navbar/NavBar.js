@@ -13,7 +13,7 @@ import DropMenu from './DropMenu'
 const NavBar = () => {
   return (
     <div className="NavBar-container">
-      <AppBar position="static" color="inherit" >
+      <AppBar position="static">
         <Toolbar id="navbar">
           <DropMenu id="drop-menu"/>
           <Typography className="navLinks">
