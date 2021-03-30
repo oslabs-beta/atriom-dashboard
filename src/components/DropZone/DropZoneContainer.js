@@ -1,6 +1,6 @@
 import React from 'react';
 import DropZone from './DropZone';
-import '../../styles/DropZoneContainer.scss'
+import '../../styles/DropZoneContainer.scss';
 
 function DropZoneContainer({ history }) {
   return (
