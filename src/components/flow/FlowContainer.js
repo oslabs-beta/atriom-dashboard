@@ -36,6 +36,11 @@ const FlowContainer = () => {
           Upload a new file
             </button>
             </Link>
+            <Link to="/dependencies">
+        <button>
+          Dependency Chart
+            </button>
+            </Link>
         <ReactFlow
           elements={[...apps, appKeyEl]}
           nodeTypes={nodeTypes}
