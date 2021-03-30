@@ -15,12 +15,13 @@ body {
 // }
 
 .NavBar-container {
-  box-shadow: 0px 8px 40px black;
+  box-shadow: 0px 8px 40px rgb(17, 17, 17);
   z-index: 1000;
 }
 
 #navbar {
-  background: #3b7f8b;
+  background: rgb(18,82,93);
+  background: linear-gradient(255deg, rgba(18,82,93,1) 0%, rgba(31,65,84,1) 100%);
 }
 
 .menuIcon path{
