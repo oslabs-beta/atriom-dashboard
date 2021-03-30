@@ -2,7 +2,15 @@ import locations, { appLocations } from './locations';
 
 export const convertAppObj = (apps, colorMap) =>
   apps.map((app, i) => {
-    const { dependencies, devDependencies, id, name, consumes, modules } = app;
+    const {
+      dependencies,
+      devDependencies,
+      id,
+      name,
+      consumes,
+      modules,
+      overrides,
+    } = app;
     const appFlowObj = { id, dependencies, devDependencies, modules };
 
     // Add React Flow Properties
@@ -12,6 +20,7 @@ export const convertAppObj = (apps, colorMap) =>
       label: name,
       dependencies,
       devDependencies,
+      overrides,
       id,
       name,
       modules,

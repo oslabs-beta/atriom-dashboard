@@ -3,6 +3,7 @@ import ReactFlow, { Controls } from 'react-flow-renderer';
 import AppContainer from './AppContainer';
 import AppsContext from '../../contexts/AppsContext';
 import AppKey from './AppKey';
+import { Link } from 'react-router-dom';
 
 const nodeTypes = {
   AppContainer,
@@ -16,7 +17,7 @@ const appKeyEl = {
 };
 
 const FlowContainer = () => {
-  const apps = useContext(AppsContext);
+  const { apps } = useContext(AppsContext);
 
   const onLoad = useCallback((instance) => {
     instance.fitView({ padding: 0.05 });
@@ -25,6 +26,7 @@ const FlowContainer = () => {
   if (apps.length)
     return (
       <div className="FlowContainer">
+        <Link to="/dependencies">asdfasdf</Link>
         <ReactFlow
           elements={[...apps, appKeyEl]}
           nodeTypes={nodeTypes}

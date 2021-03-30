@@ -12,14 +12,17 @@ import '../styles/AppPage.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = () => {
-  const apps = useContext(AppsContext);
+  const { apps } = useContext(AppsContext);
+  console.log(apps);
 
-  const renderAppRoutes = () =>
-    apps.map((app, i) => (
-      <Route key={`AppRoute${i}`} path={`/app/${app.id}`} exact>
-        <AppPage app={app} />
-      </Route>
-    ));
+  const renderAppRoutes = () => {
+    if (apps.length)
+      return apps.map((app, i) => (
+        <Route key={`AppRoute${i}`} path={`/app/${app.id}`} exact>
+          <AppPage app={app} />
+        </Route>
+      ));
+  };
 
   return (
     <Router>
