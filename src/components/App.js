@@ -30,11 +30,11 @@ const App = () => {
       <div className="App">
         {/* <NavBar /> */}
         <Switch>
-          {apps.length ? (
+          {/* {apps.length ? (
             <Route path="/" exact>
               <AppPage app={apps[0]} />
             </Route>
-          ) : null}
+          ) : null} */}
           <Route path="/home" exact component={FlowContainer} />
           {renderAppRoutes()}
           <Route path="/dependecies" component={DependencyChart} />
