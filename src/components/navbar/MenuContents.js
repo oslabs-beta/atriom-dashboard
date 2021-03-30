@@ -13,7 +13,7 @@ import ModuleListCollapse from './ModuleListCollapse'
 import TableChartIcon from '@material-ui/icons/TableChart';
 
 
-const MenuContents = () => {
+const MenuContents = ({apps}) => {
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -37,7 +37,7 @@ const MenuContents = () => {
           <ListItemText primary='Dependency Chart' className="listItem"/>
         </ListItem>
       </Link>
-        <AppListCollapse />
+        <AppListCollapse apps={apps} />
       </List>
     </div>
   );

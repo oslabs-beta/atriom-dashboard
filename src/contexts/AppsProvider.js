@@ -7,11 +7,11 @@ import { createColorMap, convertAppObj } from '../helpers';
 export default ({ children }) => {
   const [apps, setApps] = useState([]);
 
-  useEffect(() => {
-    const colorMap = createColorMap(appData, colors);
-    const convertedApps = convertAppObj(appData, colorMap);
-    setApps(convertedApps);
-  }, []);
+  // useEffect(() => {
+  //   const colorMap = createColorMap(appData, colors);
+  //   const convertedApps = convertAppObj(appData, colorMap);
+  //   setApps(convertedApps);
+  // }, []);
 
   const { Provider } = AppsContext;
   return <Provider value={{apps, setApps}}>{children}</Provider>;
