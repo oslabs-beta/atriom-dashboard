@@ -24,7 +24,7 @@ export default function AppNode(props) {
     //   onMouseUp={clickOrDrag}
     // >
     <div className="AppNode" style={{ backgroundColor: data.color }}>
-      <Link to={`/app/${id}`}>
+      <Link to={`/app/${id}`} style={{ textDecoration: 'none' }}>
         <h4 className="AppNode-label">{data.label}</h4>
       </Link>
     </div>

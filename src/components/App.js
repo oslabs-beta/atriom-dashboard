@@ -7,7 +7,7 @@ import AppPage from './AppPage';
 import FlowContainer from './flow/FlowContainer';
 import AppsContext from '../contexts/AppsContext';
 import DependencyChart from './DependencyChart/DependencyChart';
-
+import DropZoneContainer from './DropZone/DropZoneContainer';
 import '../styles.scss';
 
 import '../styles/AppPage.scss';
@@ -24,24 +24,34 @@ const App = () => {
         <AppPage app={app} />
       </Route>
     ));
-  //console.log(apps);
-  return (
-    <Router>
-      <div className="App">
-        {/* <NavBar /> */}
-        <Switch>
-          {/* {apps.length ? (
-            <Route path="/" exact>
-              <AppPage app={apps[0]} />
-            </Route>
-          ) : null} */}
-          <Route path="/home" exact component={FlowContainer} />
-          {renderAppRoutes()}
-          <Route path="/dependecies" component={DependencyChart} />
-        </Switch>
-      </div>
-    </Router>
-  );
+  if (apps.length)
+    return (
+      <Router>
+        <div className="App">
+          <NavBar />
+          <Switch>
+            <Route path="/" exact component={DropZoneContainer} />
+            {/* <Route path="/" exact component={FlowContainer} /> */}
+            <Route path="/home" exact component={FlowContainer} />
+            {renderAppRoutes()}
+            <Route path="/dependencies" component={DependencyChart} />
+          </Switch>
+        </div>
+      </Router>
+    );
+  else
+    return (
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/" exact component={DropZoneContainer} />
+            {/* <Route path="/" exact component={FlowContainer} /> */}
+            <Route path="/home" exact component={FlowContainer} />
+            <Route path="/dependencies" component={DependencyChart} />
+          </Switch>
+        </div>
+      </Router>
+    );
 };
 
 export default App;
