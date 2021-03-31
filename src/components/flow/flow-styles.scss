@@ -21,6 +21,10 @@
   justify-content: center;
 }
 
+.AppNode-label {
+  color: white;
+}
+
 .ModuleNode {
   height: 80px;
   width: 80px;
@@ -34,6 +38,7 @@
     text-align: center;
     margin: 0;
     padding: 0;
+    color: white;
   }
 
   &:hover {
