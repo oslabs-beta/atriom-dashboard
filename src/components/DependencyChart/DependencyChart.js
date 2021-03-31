@@ -63,7 +63,7 @@ function DependencyChart() {
   }
   if (apps.length && columns.length)
     return (
-      <div className="DependencyChart">
+      <div className="DependencyChart" style={{ width: '50%', margin: '0' }}>
         <CssBaseline />
         <DependencyTable columns={columns} data={depList} />
       </div>

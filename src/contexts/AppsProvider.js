@@ -8,9 +8,6 @@ export default ({ children }) => {
   const [apps, setApps] = useState([]);
 
   useEffect(() => {
-    console.log(appData);
-    // const contents = JSON.parse(appData);
-    // // const contents = eval(e.target.result);
     const colorMap = createColorMap(appData, colors);
     const convertedApps = convertAppObj(appData, colorMap);
     setApps(convertedApps);

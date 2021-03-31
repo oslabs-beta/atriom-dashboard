@@ -4,17 +4,12 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-
-import Navbar from './navbar/NavBar';
 import Modules from './Modules.js';
-import AppImage from './AppImage.js';
 import Consumes from './Consumes.js';
 import Shared from './Shared.js';
 import DirectDependecies from './DirectDependencies.js';
 
 const AppPage = (props) => {
-  console.log('APP PAGE PROPS', props);
-  const { app } = props;
   return (
     <div className="appPage">
       <br />
