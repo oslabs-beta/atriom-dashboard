@@ -27,7 +27,10 @@ const DropZone = (props) => {
       const reader = new FileReader();
       reader.readAsText(appFile, 'UTF-8');
       reader.onload = function (e) {
-        const contents = eval(e.target.result);
+        const raw = e.target.result;
+        const manipulated = '[' + raw.slice(0, raw.length - 1) + ']';
+        const contents = JSON.parse(manipulated);
+        // const contents = eval(e.target.result);
         const colorMap = createColorMap(contents, colors);
         const convertedApps = convertAppObj(contents, colorMap);
         setApps(convertedApps);
@@ -56,7 +59,7 @@ const DropZone = (props) => {
       file.name;
 
     let valid;
-    if (fileType === 'js') valid = true;
+    if (fileType === 'js' || fileType === 'json') valid = true;
     else valid = false;
 
     if (valid) {

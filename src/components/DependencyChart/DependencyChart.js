@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 // import '../../styles/DependencyChart.scss';
 
 function DependencyChart() {
-  const { apps, setApps } = useContext(AppsContext);
-
+  const { apps } = useContext(AppsContext);
   const appList = [];
   for (let i = 0; i < apps.length; i++) {
     console.log(apps[i].id);
@@ -62,7 +61,6 @@ function DependencyChart() {
       }
     }
   }
-
   if (apps.length && columns.length)
     return (
       <div className="DependencyChart">

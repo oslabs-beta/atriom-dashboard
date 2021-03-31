@@ -5,7 +5,6 @@ import AppContainer from './AppContainer';
 import AppsContext from '../../contexts/AppsContext';
 import AppKey from './AppKey';
 
-
 const nodeTypes = {
   AppContainer,
   AppKey,
@@ -26,7 +25,7 @@ const FlowContainer = () => {
 
   if (apps.length)
     return (
-      <div className="FlowContainer">  
+      <div className="FlowContainer">
         <ReactFlow
           elements={[...apps, appKeyEl]}
           nodeTypes={nodeTypes}
