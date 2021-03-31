@@ -27,8 +27,8 @@ const App = () => {
         <div className="App">
           <NavBar />
           <Switch>
-            <Route path="/" exact component={DropZoneContainer} />
-            {/* <Route path="/" exact component={FlowContainer} /> */}
+            {/* <Route path="/" exact component={DropZoneContainer} /> */}
+            <Route path="/" exact component={FlowContainer} />
             <Route path="/home" exact component={FlowContainer} />
             {renderAppRoutes()}
             <Route path="/dependencies" component={DependencyChart} />
