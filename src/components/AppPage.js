@@ -17,7 +17,6 @@ const AppPage = (props) => {
   const { app } = props;
   return (
     <div className="appPage">
-      <Navbar />
       <br />
       <center>
         <h1>Application Information</h1>
