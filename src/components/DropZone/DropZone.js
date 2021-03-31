@@ -3,8 +3,15 @@ import AppsContext from '../../contexts/AppsContext';
 import colors from '../../helpers/colors';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import { createColorMap, convertAppObj } from '../../helpers';
 import '../../styles/DropZone.scss';
+
+const useStyles = makeStyles((theme) => ({
+  outlinedError: {
+    color: theme.palette.error.main,
+  },
+}));
 
 const DropZone = (props) => {
   const { apps, setApps } = useContext(AppsContext);
@@ -17,7 +24,6 @@ const DropZone = (props) => {
 
     if (errorMessage) console.log(errorMessage);
     if (appFile) {
-      console.log('AppFile: ', appFile);
       const reader = new FileReader();
       reader.readAsText(appFile, 'UTF-8');
       reader.onload = function (e) {
@@ -51,16 +57,18 @@ const DropZone = (props) => {
     const fileType =
       file.name.substring(file.name.lastIndexOf('.') + 1, file.name.length) ||
       file.name;
+
     let valid;
     if (fileType === 'js' || fileType === 'json') valid = true;
     else valid = false;
-    console.log('valid: ', valid);
 
     if (valid) {
       setAppFile(file);
       setErrorMessage(null);
     } else setErrorMessage('Please upload a valid file');
   };
+
+  const classes = useStyles();
 
   if (errorMessage) {
     return (
@@ -73,17 +81,18 @@ const DropZone = (props) => {
           onDrop={fileDrop}
         >
           <div className="drop-message">
-            <div className="alert">
+            <div>
               <Alert
+                className={classes.outlinedError}
                 onClick={() => {
                   setErrorMessage('');
                 }}
                 action={
-                  <Button color="inherit" sixe="small">
+                  <Button color="inherit" size="medium">
                     X
                   </Button>
                 }
-                variant="filled"
+                variant="outlined"
                 severity="error"
               >
                 {errorMessage}

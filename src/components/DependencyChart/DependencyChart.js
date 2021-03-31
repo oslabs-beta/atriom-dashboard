@@ -1,23 +1,17 @@
-import React, {
-  useMemo,
-  useState,
-  useEffect,
-  useContext,
-  useCallback,
-} from 'react';
+import React, { useContext } from 'react';
 import DependencyTable from './DependencyTable';
 import AppsContext from '../../contexts/AppsContext';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { Link } from 'react-router-dom';
 // import '../../styles/DependencyChart.scss';
 
 function DependencyChart() {
   const { apps } = useContext(AppsContext);
-
   const appList = [];
   for (let i = 0; i < apps.length; i++) {
     console.log(apps[i].id);
     appList.push({
-      Header: apps[i].id,
+      Header: <Link to={`/app/${apps[i].id}`}>{apps[i].id}</Link>,
       accessor: `${apps[i].id}`,
     });
   }
@@ -67,9 +61,6 @@ function DependencyChart() {
       }
     }
   }
-
-  // console.log(depList);
-
   if (apps.length && columns.length)
     return (
       <div className="DependencyChart">
