@@ -14,7 +14,7 @@ const NavBar = () => {
   const { apps, setApps } = useContext(AppsContext);
   return (
     <div className="NavBar-container">
-      <AppBar position="static" color="inherit">
+      <AppBar position="static">
         <Toolbar id="navbar">
           <DropMenu id="drop-menu" apps={apps} />
           <Typography className="navLinks">
