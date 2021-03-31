@@ -1,16 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import AppsContext from '../contexts/AppsContext';
 
-const DirectDependencies = () => {
+const DirectDependecies = (props) => {
+  console.log('DEPENDENCIES DATA', props.dependencies);
+  const apps = useContext(AppsContext);
+
   return (
-    <div className="infoBox">
-      <h4>Direct Dependecies</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco
-      </p>
-    </div>
+    <TableContainer component={Paper}>
+      <center>
+        <h4>Direct Dependencies</h4>
+      </center>
+      <Table size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell>name</TableCell>
+            <TableCell align="right">version</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {props.dependencies.map((element) => (
+            <TableRow key={element.name}>
+              <TableCell component="th" scope="row">
+                {element.name}
+              </TableCell>
+              <TableCell align="right">{element.version}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 
-export default DirectDependencies;
+export default DirectDependecies;

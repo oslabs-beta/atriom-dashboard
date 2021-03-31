@@ -25,6 +25,7 @@ export const convertAppObj = (apps, colorMap) =>
       name,
       modules,
       consumes,
+      overrides,
     };
     appFlowObj.data.consumesNodes = convertConsumedModules(consumes, colorMap);
 

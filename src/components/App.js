@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import NavBar from './navbar/NavBar';
 import Home from './Home';
+
 import AppPage from './AppPage';
 
 import FlowContainer from './flow/FlowContainer';
@@ -11,6 +12,8 @@ import '../styles.scss';
 
 import '../styles/AppPage.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Modules from './Modules';
 
 const App = () => {
   const { apps } = useContext(AppsContext);
