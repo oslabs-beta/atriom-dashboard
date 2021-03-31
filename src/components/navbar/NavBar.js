@@ -18,17 +18,17 @@ const NavBar = () => {
         <Toolbar id="navbar">
           <DropMenu id="drop-menu" apps={apps} />
           <Typography className="navLinks">
-            <Link to="/">DASHBOARD</Link>
+            <Link to="/">Dashboard</Link>
           </Typography>
           <Typography className="navLinks" noWrap>
-            <Link to="/dependencies">DEPENDENCY CHART</Link>
+            <Link to="/dependencies">Dependency Chart</Link>
             <Link
               to="/"
               onClick={() => {
                 setApps([]);
               }}
             >
-              UPLOAD NEW FILE
+              Upload New File...
             </Link>
           </Typography>
           {/* <Search /> */}
