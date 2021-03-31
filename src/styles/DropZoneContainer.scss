@@ -1,0 +1,16 @@
+.title {
+  font-size: 6rem;
+  text-align: center !important;
+  margin-top: 10%;
+  color: #63d4e7;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

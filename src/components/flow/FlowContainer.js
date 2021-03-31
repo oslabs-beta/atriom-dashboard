@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import ReactFlow, { Controls } from 'react-flow-renderer';
+import { Link, withRouter } from 'react-router-dom';
 import AppContainer from './AppContainer';
 import AppsContext from '../../contexts/AppsContext';
 import AppKey from './AppKey';
-import NavBar from '../navbar/NavBar'
+
 
 const nodeTypes = {
   AppContainer,
@@ -17,7 +18,7 @@ const appKeyEl = {
 };
 
 const FlowContainer = () => {
-  const { apps } = useContext(AppsContext);
+  const { apps, setApps } = useContext(AppsContext);
 
   const onLoad = useCallback((instance) => {
     instance.fitView({ padding: 0.05 });
@@ -25,8 +26,7 @@ const FlowContainer = () => {
 
   if (apps.length)
     return (
-      <div className="FlowContainer">
-        <NavBar />
+      <div className="FlowContainer">  
         <ReactFlow
           elements={[...apps, appKeyEl]}
           nodeTypes={nodeTypes}
