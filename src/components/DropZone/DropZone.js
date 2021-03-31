@@ -3,8 +3,15 @@ import AppsContext from '../../contexts/AppsContext';
 import colors from '../../helpers/colors';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import { createColorMap, convertAppObj } from '../../helpers';
 import '../../styles/DropZone.scss';
+
+const useStyles = makeStyles((theme) => ({
+  outlinedError: {
+    color: theme.palette.error.main,
+  },
+}));
 
 const DropZone = (props) => {
   const { apps, setApps } = useContext(AppsContext);
@@ -58,6 +65,8 @@ const DropZone = (props) => {
     } else setErrorMessage('Please upload a valid file');
   };
 
+  const classes = useStyles();
+
   if (errorMessage) {
     return (
       <div className="container">
@@ -69,13 +78,14 @@ const DropZone = (props) => {
           onDrop={fileDrop}
         >
           <div className="drop-message">
-            <div className="alert">
+            <div>
               <Alert
+                className={classes.outlinedError}
                 onClick={() => {
                   setErrorMessage('');
                 }}
                 action={
-                  <Button color="white" size="medium">
+                  <Button color="inherit" size="medium">
                     X
                   </Button>
                 }
