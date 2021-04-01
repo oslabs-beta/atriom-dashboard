@@ -1,33 +1,24 @@
 .DependencyChart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
+  background: #f5f5f5;
+  margin-top: 50px;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: inline-block;
+  width: 90%;
 
-  table {
-    border-collapse: collapse;
-    overflow-x: auto;
-    width: 80%;
+  .table {
+    border-radius: 100px;
   }
-  th {
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    padding-right: 30px;
+  .headerCell {
+    color: #cb4636;
+    font-size: 1em;
+    a:link,
+    a:visited {
+      color: #cb4636;
+    }
   }
-  tr {
-    background: #242c2e;
-    color: #f5f5f5;
-  }
-  td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+
+  .cell {
+    color: #1c2426;
   }
 }
