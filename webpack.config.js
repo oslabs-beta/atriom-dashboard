@@ -33,6 +33,10 @@ module.exports = {
         // use: [MiniCssExtractPlugin.loader, 'css-loader'],
         use: ['style-loader', 'css-loader'],
       },
+      {
+        test: /\.png/,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [new MiniCssExtractPlugin()],

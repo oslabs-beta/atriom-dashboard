@@ -1,11 +1,14 @@
 .drop-container {
   display: flex;
   align-items: center;
+  // align-items: flex-end;
   justify-content: center;
   margin: 0;
-  width: 800px;
-  height: 200px;
-  border: 4px dashed #63d4e7;
+  width: 750px;
+  height: 150px;
+  // border: 4px dashed #63d4e7;
+  border: 4px dashed #42c3b9;
+  margin-bottom: 10vh;
 }
 
 .drop-message {

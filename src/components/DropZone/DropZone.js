@@ -59,7 +59,8 @@ const DropZone = (props) => {
       file.name;
 
     let valid;
-    if (fileType === 'js' || fileType === 'json') valid = true;
+    if (fileType === 'js' || fileType === 'json' || fileType === 'data')
+      valid = true;
     else valid = false;
 
     if (valid) {
@@ -108,7 +109,7 @@ const DropZone = (props) => {
         onDrop={fileDrop}
       >
         <div className="drop-message">
-          Drag and drop your file to view your app!
+          Drag and drop your file to view your dashboard
         </div>
       </div>
     );
