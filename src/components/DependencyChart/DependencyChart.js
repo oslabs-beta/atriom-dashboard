@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import DependencyTable from './DependencyTable';
 import AppsContext from '../../contexts/AppsContext';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { Link } from 'react-router-dom';
-// import '../../styles/DependencyChart.scss';
+import '../../styles/DependencyChart.scss';
 
 function DependencyChart() {
   const { apps } = useContext(AppsContext);
@@ -62,8 +61,7 @@ function DependencyChart() {
   }
   if (apps.length && columns.length)
     return (
-      <div className="DependencyChart" style={{ width: '50%', margin: '0' }}>
-        <CssBaseline />
+      <div className="DependencyChart">
         <DependencyTable columns={columns} data={depList} />
       </div>
     );
