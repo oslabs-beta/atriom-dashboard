@@ -109,7 +109,7 @@ const DropZone = (props) => {
         onDrop={fileDrop}
       >
         <div className="drop-message">
-          Drag and drop your file to view your app
+          Drag and drop your file to view your dashboard
         </div>
       </div>
     );
