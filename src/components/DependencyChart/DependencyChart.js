@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import DependencyTable from './DependencyTable';
 import AppsContext from '../../contexts/AppsContext';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { Link } from 'react-router-dom';
 import '../../styles/DependencyChart.scss';
 

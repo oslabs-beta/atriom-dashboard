@@ -23,7 +23,7 @@ export default function Table({ columns, data }) {
     <MaUTable {...getTableProps()}>
       <TableHead>
         {headerGroups.map((headerGroup) => (
-          <TableRow {...headerGroup.getHeaderGroupProps()} className="row">
+          <TableRow {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               <TableCell {...column.getHeaderProps()} className="headerCell">
                 {column.render('Header')}
@@ -32,11 +32,11 @@ export default function Table({ columns, data }) {
           </TableRow>
         ))}
       </TableHead>
-      <TableBody {...getTableBodyProps()} className="body">
+      <TableBody {...getTableBodyProps()}>
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <TableRow {...row.getRowProps()} className="row">
+            <TableRow {...row.getRowProps()}>
               {row.cells.map((cell) => {
                 return (
                   <TableCell {...cell.getCellProps()} className="cell">
