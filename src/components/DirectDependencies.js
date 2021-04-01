@@ -7,7 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-const DirectDependecies = (props) => {
+const DirectDependecies = ({ dependencies }) => {
   return (
     <TableContainer component={Paper}>
       <center>
@@ -21,7 +21,7 @@ const DirectDependecies = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.dependencies.map((element) => (
+          {dependencies.map((element) => (
             <TableRow key={element.name}>
               <TableCell component="th" scope="row">
                 {element.name}

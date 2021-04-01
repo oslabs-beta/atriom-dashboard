@@ -7,7 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-const Shared = (props) => {
+const Shared = ({ shared }) => {
   //use a nested loop to iterate through the dependecies and the devdependecies data, if both contain the same dependency and version, push that object into the rows array
 
   //generate the table using the new data in the rows array
@@ -25,7 +25,7 @@ const Shared = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.shared.map((element) => (
+          {shared.map((element) => (
             <TableRow key={element.id}>
               <TableCell component="th" scope="row">
                 {element.name}

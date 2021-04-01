@@ -7,7 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-const Consumes = (props) => {
+const Consumes = ({ consumes }) => {
   return (
     <TableContainer component={Paper}>
       <center>
@@ -21,7 +21,7 @@ const Consumes = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.consumes.map((element) => (
+          {consumes.map((element) => (
             <TableRow key={element.id}>
               <TableCell component="th" scope="row">
                 {element.data.name}

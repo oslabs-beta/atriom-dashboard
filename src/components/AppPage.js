@@ -9,7 +9,7 @@ import Consumes from './Consumes.js';
 import Shared from './Shared.js';
 import DirectDependecies from './DirectDependencies.js';
 
-const AppPage = (props) => {
+const AppPage = ({ app }) => {
   return (
     <div className="appPage">
       <br />
@@ -17,19 +17,19 @@ const AppPage = (props) => {
         <h1>Application Information</h1>
       </center>
       <div id="appInfoContainer">
-        <h2>{props.app.data.name}</h2>
+        <h2>{app.data.name}</h2>
         <VerticalTimeline layout="1-column-left" class="timeline">
           <VerticalTimelineElement>
-            <Modules modules={props.app.modules} />
+            <Modules modules={app.modules} />
           </VerticalTimelineElement>
           <VerticalTimelineElement>
-            <Consumes consumes={props.app.data.consumesNodes} />
+            <Consumes consumes={app.data.consumesNodes} />
           </VerticalTimelineElement>
           <VerticalTimelineElement>
-            <Shared shared={props.app.data.overrides} />
+            <Shared shared={app.data.overrides} />
           </VerticalTimelineElement>
           <VerticalTimelineElement>
-            <DirectDependecies dependencies={props.app.data.dependencies} />
+            <DirectDependecies dependencies={app.data.dependencies} />
           </VerticalTimelineElement>
         </VerticalTimeline>
       </div>

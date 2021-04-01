@@ -7,7 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-const Modules = (props) => {
+const Modules = ({ modules }) => {
   return (
     <TableContainer component={Paper}>
       <center>
@@ -22,7 +22,7 @@ const Modules = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.modules.map((module) => (
+          {modules.map((module) => (
             <TableRow key={module.id}>
               <TableCell component="th" scope="row">
                 {module.name}

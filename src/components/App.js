@@ -43,9 +43,6 @@ const App = () => {
         <div className="App">
           <Switch>
             <Route path="/" exact component={DropZoneContainer} />
-            {/* <Route path="/" exact component={FlowContainer} /> */}
-            <Route path="/home" exact component={FlowContainer} />
-            <Route path="/dependencies" component={DependencyChart} />
           </Switch>
         </div>
       </Router>
