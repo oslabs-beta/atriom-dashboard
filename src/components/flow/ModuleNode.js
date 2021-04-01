@@ -25,10 +25,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ModuleNode(props) {
-  // console.log(props);
+function ModuleNode({ data }) {
   const classes = useStyles();
-  const { data } = props;
 
   const [open, setOpen] = React.useState(false);
 

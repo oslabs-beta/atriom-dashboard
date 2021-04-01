@@ -3,7 +3,11 @@
   width: 100vw;
   // background-color: #1c2426;
   // background: rgb(12,29,36);
-  // background: radial-gradient(circle, rgba(12,29,36,1) 0%, rgba(23,43,54,1) 100%);
+  background: radial-gradient(
+    circle,
+    rgba(12, 29, 36, 1) 0%,
+    rgba(23, 43, 54, 1) 100%
+  );
 }
 
 .AppContainer {
@@ -12,7 +16,7 @@
 }
 
 .AppNode {
-  background-color: grey;
+  // background-color: grey;
   height: 150px;
   width: 150px;
   border-radius: 100px;
@@ -53,30 +57,21 @@
 }
 
 .AppKey {
-  border: 1px solid black;
+  border: 1px solid #f5f5f5;
   border-radius: 10px;
   display: inline-block;
-  padding: 3px 5px;
+  padding: 15px 18px;
 }
 
 .AppKey-key {
   display: flex;
   margin: 3px 0;
+  align-items: center;
 }
 
 .AppKey-color {
-  width: 45px;
-  height: 25px;
-  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  // border-radius: 100px;
+  margin-right: 10px;
 }
-
-// $font-standard: rgb(119, 119, 119);
-// $font-hover: rgb(53, 53, 53);
-
-// .menuIcon {
-//   color: $font-standard;
-
-//   &:hover {
-//     color: $font-hover;
-//   }
-// }

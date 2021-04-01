@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -6,12 +6,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import AppsContext from '../contexts/AppsContext';
 
-const Consumes = (props) => {
-  console.log('CONSUMES DATA', props.consumes);
-  const apps = useContext(AppsContext);
-
+const Consumes = ({ consumes }) => {
   return (
     <TableContainer component={Paper}>
       <center>
@@ -25,7 +21,7 @@ const Consumes = (props) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.consumes.map((element) => (
+          {consumes.map((element) => (
             <TableRow key={element.id}>
               <TableCell component="th" scope="row">
                 {element.data.name}

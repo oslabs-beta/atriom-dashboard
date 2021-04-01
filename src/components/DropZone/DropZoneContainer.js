@@ -4,11 +4,9 @@ import '../../styles/DropZoneContainer.scss';
 
 function DropZoneContainer({ history }) {
   return (
-    <div>
-      <p className="title">ATRIOM</p>
-      <div className="content">
-        <DropZone history={history} />
-      </div>
+    <div className="content">
+      <h1 className="title">ATRIOM</h1>
+      <DropZone history={history} />
     </div>
   );
 }

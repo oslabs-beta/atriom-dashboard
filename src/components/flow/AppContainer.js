@@ -12,14 +12,13 @@ const nodeTypes = {
   ModuleNode,
 };
 
-export default (props) => {
-  const { id, data } = props;
-
+export default ({ id, data }) => {
   const appNode = {
     id,
     type: 'AppNode',
     data,
-    // Keep this position hardcoded unless the size of AppContainer changes!!! This centers the app node in the container
+    // Keep this position hardcoded unless the size of AppContainer or AppNode changes!
+    // This centers the app node in the container
     position: { x: 100, y: 100 },
   };
 

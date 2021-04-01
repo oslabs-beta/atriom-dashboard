@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext, useCallback } from 'react';
+import React, { useContext, useCallback } from 'react';
 import ReactFlow, { Controls } from 'react-flow-renderer';
-import { Link, withRouter } from 'react-router-dom';
 import AppContainer from './AppContainer';
 import AppsContext from '../../contexts/AppsContext';
 import AppKey from './AppKey';
@@ -17,7 +16,7 @@ const appKeyEl = {
 };
 
 const FlowContainer = () => {
-  const { apps, setApps } = useContext(AppsContext);
+  const { apps } = useContext(AppsContext);
 
   const onLoad = useCallback((instance) => {
     instance.fitView({ padding: 0.05 });
