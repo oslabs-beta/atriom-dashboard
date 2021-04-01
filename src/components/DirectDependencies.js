@@ -14,10 +14,10 @@ const DirectDependecies = (props) => {
 
   return (
     <TableContainer component={Paper}>
-      <center>
+      <center className="appPageTable">
         <h4>Direct Dependencies</h4>
       </center>
-      <Table size="small">
+      <Table size="small" className="appPageTable">
         <TableHead>
           <TableRow>
             <TableCell>name</TableCell>

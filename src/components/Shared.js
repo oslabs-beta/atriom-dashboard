@@ -13,16 +13,12 @@ const Shared = (props) => {
 
   const apps = useContext(AppsContext);
 
-  //use a nested loop to iterate through the dependecies and the devdependecies data, if both contain the same dependency and version, push that object into the rows array
-
-  //generate the table using the new data in the rows array
-
   return (
     <TableContainer component={Paper}>
-      <center>
+      <center className="appPageTable">
         <h4>Shared</h4>
       </center>
-      <Table size="small">
+      <Table size="small" className="appPageTable">
         <TableHead>
           <TableRow>
             <TableCell>name</TableCell>

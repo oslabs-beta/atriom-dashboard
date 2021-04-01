@@ -14,10 +14,10 @@ const Modules = (props) => {
 
   return (
     <TableContainer component={Paper}>
-      <center>
+      <center className="appPageTable">
         <h4>Modules</h4>
       </center>
-      <Table size="small">
+      <Table size="small" className="appPageTable">
         <TableHead>
           <TableRow>
             <TableCell>name</TableCell>
