@@ -9,7 +9,6 @@ function DependencyChart() {
   const { apps } = useContext(AppsContext);
   const appList = [];
   for (let i = 0; i < apps.length; i++) {
-    console.log(apps[i].id);
     appList.push({
       Header: <Link to={`/app/${apps[i].id}`}>{apps[i].id}</Link>,
       accessor: `${apps[i].id}`,
@@ -63,7 +62,7 @@ function DependencyChart() {
   }
   if (apps.length && columns.length)
     return (
-      <div className="DependencyChart">
+      <div className="DependencyChart" style={{ width: '50%', margin: '0' }}>
         <CssBaseline />
         <DependencyTable columns={columns} data={depList} />
       </div>

@@ -12,7 +12,6 @@ import EcoRoundedIcon from '@material-ui/icons/EcoRounded';
 
 const AppListCollapse = ({ apps }) => {
   const [open, setOpen] = React.useState(true);
-  console.log(apps);
 
   const handleClick = () => {
     setOpen(!open);

@@ -1,7 +1,5 @@
 import React, { useContext, useState } from 'react';
 import NavBar from './navbar/NavBar';
-import Home from './Home';
-
 import AppPage from './AppPage';
 
 import FlowContainer from './flow/FlowContainer';
@@ -45,9 +43,6 @@ const App = () => {
         <div className="App">
           <Switch>
             <Route path="/" exact component={DropZoneContainer} />
-            {/* <Route path="/" exact component={FlowContainer} /> */}
-            <Route path="/home" exact component={FlowContainer} />
-            <Route path="/dependencies" component={DependencyChart} />
           </Switch>
         </div>
       </Router>

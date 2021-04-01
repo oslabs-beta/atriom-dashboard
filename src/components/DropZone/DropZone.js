@@ -72,49 +72,43 @@ const DropZone = (props) => {
 
   if (errorMessage) {
     return (
-      <div className="container">
-        <div
-          className="drop-container"
-          onDragOver={dragOver}
-          onDragEnter={dragEnter}
-          onDragLeave={dragLeave}
-          onDrop={fileDrop}
-        >
-          <div className="drop-message">
-            <div>
-              <Alert
-                className={classes.outlinedError}
-                onClick={() => {
-                  setErrorMessage('');
-                }}
-                action={
-                  <Button color="inherit" size="medium">
-                    X
-                  </Button>
-                }
-                variant="outlined"
-                severity="error"
-              >
-                {errorMessage}
-              </Alert>
-            </div>
-          </div>
+      <div
+        className="drop-container"
+        onDragOver={dragOver}
+        onDragEnter={dragEnter}
+        onDragLeave={dragLeave}
+        onDrop={fileDrop}
+      >
+        <div className="drop-message">
+          <Alert
+            className={classes.outlinedError}
+            onClick={() => {
+              setErrorMessage('');
+            }}
+            action={
+              <Button color="inherit" size="medium">
+                X
+              </Button>
+            }
+            variant="outlined"
+            severity="error"
+          >
+            {errorMessage}
+          </Alert>
         </div>
       </div>
     );
   } else {
     return (
-      <div className="container">
-        <div
-          className="drop-container"
-          onDragOver={dragOver}
-          onDragEnter={dragEnter}
-          onDragLeave={dragLeave}
-          onDrop={fileDrop}
-        >
-          <div className="drop-message">
-            Drag and drop your file to view your app!
-          </div>
+      <div
+        className="drop-container"
+        onDragOver={dragOver}
+        onDragEnter={dragEnter}
+        onDragLeave={dragLeave}
+        onDrop={fileDrop}
+      >
+        <div className="drop-message">
+          Drag and drop your file to view your app!
         </div>
       </div>
     );
