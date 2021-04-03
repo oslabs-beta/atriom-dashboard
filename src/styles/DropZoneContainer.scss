@@ -7,9 +7,10 @@
 
 .content {
   min-height: 100vh;
+  background: url('../images/atriom-bg.png') no-repeat center center fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding-bottom: 20vh;
+  justify-content: flex-end;
+  // padding-bottom: 20vh;
 }

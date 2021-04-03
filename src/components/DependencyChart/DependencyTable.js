@@ -1,30 +1,33 @@
 import React from 'react';
 import { useTable } from 'react-table';
-import MaUTable from '@material-ui/core/Table'
-import TableBody from '@material-ui/core/TableBody'
-import TableCell from '@material-ui/core/TableCell'
-import TableHead from '@material-ui/core/TableHead'
-import TableRow from '@material-ui/core/TableRow'
+import MaUTable from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import styles from '../../styles/DependencyChart.scss';
 
-
-export default function Table({columns, data}) {
+export default function Table({ columns, data }) {
   const {
     getTableProps,
     getTableBodyProps,
     headerGroups,
     rows,
-    prepareRow
+    prepareRow,
   } = useTable({
-    columns, data
+    columns,
+    data,
   });
 
   return (
     <MaUTable {...getTableProps()}>
       <TableHead>
-        {headerGroups.map(headerGroup => (
+        {headerGroups.map((headerGroup) => (
           <TableRow {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <TableCell {...column.getHeaderProps()}>{column.render("Header")}</TableCell>
+            {headerGroup.headers.map((column) => (
+              <TableCell {...column.getHeaderProps()} className="headerCell">
+                {column.render('Header')}
+              </TableCell>
             ))}
           </TableRow>
         ))}
@@ -34,13 +37,17 @@ export default function Table({columns, data}) {
           prepareRow(row);
           return (
             <TableRow {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return <TableCell {...cell.getCellProps()}>{cell.render("Cell")}</TableCell>;
+              {row.cells.map((cell) => {
+                return (
+                  <TableCell {...cell.getCellProps()} className="cell">
+                    {cell.render('Cell')}
+                  </TableCell>
+                );
               })}
             </TableRow>
           );
         })}
       </TableBody>
     </MaUTable>
-  )
-};
+  );
+}
