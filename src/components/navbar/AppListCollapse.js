@@ -1,5 +1,5 @@
 import '../../styles/MenuContents.scss';
-import React, { useContext, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -10,8 +10,8 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import DeviceHubIcon from '@material-ui/icons/DeviceHub';
 import EcoRoundedIcon from '@material-ui/icons/EcoRounded';
 
-const AppListCollapse = ({ apps }) => {
-  const [open, setOpen] = React.useState(true);
+const AppListCollapse = ({ apps, close }) => {
+  const [open, setOpen] = useState(true);
 
   const handleClick = () => {
     setOpen(!open);
@@ -19,7 +19,7 @@ const AppListCollapse = ({ apps }) => {
 
   const renderAppList = () =>
     apps.map((obj, i) => (
-      <Link to={`/app/${obj.id}`} key={`AppLink${i}`}>
+      <Link to={`/app/${obj.id}`} key={`AppLink${i}`} onClick={close}>
         <ListItem className="MenuContentButton" key={obj.id}>
           <EcoRoundedIcon className="listIcon" />
           <ListItemText primary={obj.id} className="listItem" />

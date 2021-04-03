@@ -1,25 +1,14 @@
-import "../../styles/MenuContents.scss"
+import '../../styles/MenuContents.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Collapse from '@material-ui/core/Collapse';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import AppListCollapse from './AppListCollapse'
-import ModuleListCollapse from './ModuleListCollapse'
+import AppListCollapse from './AppListCollapse';
 import TableChartIcon from '@material-ui/icons/TableChart';
 
-
-const MenuContents = ({apps}) => {
-  const [open, setOpen] = React.useState(true);
-
-  const handleClick = () => {
-    setOpen(!open);
-  };
-
+const MenuContents = ({ apps, close }) => {
   return (
     <div className="MenuContents">
       <List
@@ -31,17 +20,21 @@ const MenuContents = ({apps}) => {
           </ListSubheader>
         }
       >
-      <Link to='/dependencies'>
-        <ListItem className="MenuContentButton" key='dependency-link'>
-          <TableChartIcon className="depIcon"/>
-          <ListItemText primary='Dependency Chart' className="listItem"/>
-        </ListItem>
-      </Link>
-        <AppListCollapse apps={apps} />
+        <Link to="/dependencies">
+          <ListItem
+            className="MenuContentButton"
+            key="dependency-link"
+            onClick={close}
+          >
+            <TableChartIcon className="depIcon" />
+            <ListItemText primary="Dependency Chart" className="listItem" />
+          </ListItem>
+        </Link>
+        <AppListCollapse apps={apps} close={close} />
       </List>
     </div>
   );
-}
+};
 
 // const MenuContents = () => {
 //   const [open, setOpen] = React.useState(true);

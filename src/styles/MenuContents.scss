@@ -1,13 +1,13 @@
 $font-standard: rgb(119, 119, 119);
 $font-hover: rgb(53, 53, 53);
-$dark: #1C2426;
+$dark: #1c2426;
 $light: #f5f5f5;
 $brand: #63d4e7;
 $accent-yellow: #e0bf2b;
 
 .ListCollapse {
   span {
-  color: $light;
+    color: $light;
   }
 
   path {
@@ -19,8 +19,9 @@ $accent-yellow: #e0bf2b;
   width: 340px;
   // height: 200px;
   color: $dark;
-  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
-  margin: 5px 20px;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  margin: 0px 20px;
   border-radius: 5px;
   background-color: #242c2e;
   z-index: 100;
@@ -32,7 +33,6 @@ $accent-yellow: #e0bf2b;
   a {
     text-decoration: none;
   }
-
 }
 
 .MenuContentButton {
@@ -73,7 +73,7 @@ $accent-yellow: #e0bf2b;
   margin-left: 14px;
 }
 
-.depIcon path{
+.depIcon path {
   color: $light;
 }
 
