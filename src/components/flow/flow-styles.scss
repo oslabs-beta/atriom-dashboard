@@ -11,7 +11,7 @@
 }
 
 .AppContainer {
-  height: 375px;
+  height: 475px;
   width: 375px;
 }
 
@@ -32,7 +32,7 @@
 .ModuleNode {
   height: 80px;
   width: 80px;
-  border-radius: 100px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,6 +72,7 @@
 .AppKey-color {
   width: 30px;
   height: 30px;
-  // border-radius: 100px;
+  border-radius: 4px;
   margin-right: 10px;
+
 }
