@@ -5,6 +5,7 @@ import {
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import Modules from './Modules.js';
+import AppImage from './AppImage.js';
 import Consumes from './Consumes.js';
 import Shared from './Shared.js';
 import DirectDependecies from './DirectDependencies.js';
@@ -20,6 +21,7 @@ const AppPage = ({ app }) => {
         <h2>{app.data.name}</h2>
         <VerticalTimeline layout="1-column-left" class="timeline">
           <VerticalTimelineElement>
+            {/* icon={<AppImage />} */}
             <Modules modules={app.modules} />
           </VerticalTimelineElement>
           <VerticalTimelineElement>

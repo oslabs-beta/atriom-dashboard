@@ -16,17 +16,21 @@ const DirectDependecies = ({ dependencies }) => {
       <Table size="small" className="appPageTable">
         <TableHead>
           <TableRow>
-            <TableCell>name</TableCell>
-            <TableCell align="right">version</TableCell>
+            <TableCell className="tableData">name</TableCell>
+            <TableCell align="right" className="tableData">
+              version
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {dependencies.map((element) => (
             <TableRow key={element.name}>
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" className="tableData">
                 {element.name}
               </TableCell>
-              <TableCell align="right">{element.version}</TableCell>
+              <TableCell align="right" className="tableData">
+                {element.version}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

@@ -16,17 +16,21 @@ const Consumes = ({ consumes }) => {
       <Table size="small" className="appPageTable">
         <TableHead>
           <TableRow>
-            <TableCell>name</TableCell>
-            <TableCell align="right">file</TableCell>
+            <TableCell className="tableData">name</TableCell>
+            <TableCell align="right" className="tableData">
+              file
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {consumes.map((element) => (
             <TableRow key={element.id}>
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" className="tableData">
                 {element.data.name}
               </TableCell>
-              <TableCell align="right">{element.data.usedIn[0].file}</TableCell>
+              <TableCell align="right" className="tableData">
+                {element.data.usedIn[0].file}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

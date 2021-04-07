@@ -16,19 +16,23 @@ const Modules = ({ modules }) => {
       <Table size="small" className="appPageTable">
         <TableHead>
           <TableRow>
-            <TableCell>name</TableCell>
-            <TableCell>file</TableCell>
-            <TableCell align="right">requires</TableCell>
+            <TableCell className="tableData">name</TableCell>
+            <TableCell className="tableData">file</TableCell>
+            <TableCell align="right" className="tableData">
+              requires
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {modules.map((module) => (
             <TableRow key={module.id}>
-              <TableCell component="th" scope="row">
+              <TableCell component="th" scope="row" className="tableData">
                 {module.name}
               </TableCell>
-              <TableCell>{module.file}</TableCell>
-              <TableCell align="right">{module.requires}</TableCell>
+              <TableCell className="tableData">{module.file}</TableCell>
+              <TableCell align="right" className="tableData">
+                {module.requires}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
