@@ -62,7 +62,12 @@ export const createDependencyList = (apps, appList) => {
         depList[j].name === apps[i].data.dependencies[index].name &&
         !overrides[apps[i].id][depList[j].name]
       ) {
-        depList[j][apps[i].id] = apps[i].data.dependencies[index].version;
+        depList[j][apps[i].id] = (
+          <div className="not_shared">
+            {apps[i].data.dependencies[index].version}
+            <span className="hovertext">This should be shared.</span>
+          </div>
+        );
         index++;
       } else {
         depList[j][apps[i].id] = 'N/A';
