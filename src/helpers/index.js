@@ -11,7 +11,8 @@ export const convertAppObj = (apps, colorMap) =>
       modules,
       overrides,
     } = app;
-    const appFlowObj = { id, dependencies, devDependencies, modules };
+    // const appFlowObj = { id, dependencies, devDependencies, modules };
+    const appFlowObj = { id };
 
     // Add React Flow Properties
     appFlowObj.type = 'AppContainer';

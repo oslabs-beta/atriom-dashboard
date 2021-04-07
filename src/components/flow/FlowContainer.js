@@ -3,6 +3,7 @@ import ReactFlow, { Controls } from 'react-flow-renderer';
 import AppContainer from './AppContainer';
 import AppsContext from '../../contexts/AppsContext';
 import AppKey from './AppKey';
+import '../../styles/flow-styles.scss';
 
 const nodeTypes = {
   AppContainer,
