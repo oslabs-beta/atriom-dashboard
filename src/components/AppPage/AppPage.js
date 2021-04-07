@@ -4,10 +4,10 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import Modules from './Modules.js';
-import Consumes from './Consumes.js';
-import Shared from './Shared.js';
-import DirectDependecies from './DirectDependencies.js';
+import Modules from './Modules';
+import Consumes from './Consumes';
+import Shared from './Shared';
+import DirectDependecies from './DirectDependencies';
 
 const AppPage = ({ app }) => {
   return (
@@ -20,7 +20,7 @@ const AppPage = ({ app }) => {
         <h2>{app.data.name}</h2>
         <VerticalTimeline layout="1-column-left" class="timeline">
           <VerticalTimelineElement>
-            <Modules modules={app.modules} />
+            <Modules modules={app.data.modules} />
           </VerticalTimelineElement>
           <VerticalTimelineElement>
             <Consumes consumes={app.data.consumesNodes} />
