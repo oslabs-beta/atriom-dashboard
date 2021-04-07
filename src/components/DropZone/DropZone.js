@@ -19,10 +19,10 @@ const DropZone = (props) => {
   const [appFile, setAppFile] = useState();
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Read and manipulate data file
+
   useEffect(() => {
     if (apps.length && Array.isArray(apps)) props.history.push('/home');
-
-    if (errorMessage) console.log(errorMessage);
     if (appFile) {
       const reader = new FileReader();
       reader.readAsText(appFile, 'UTF-8');
@@ -30,7 +30,6 @@ const DropZone = (props) => {
         const raw = e.target.result;
         const manipulated = '[' + raw.slice(0, raw.length - 1) + ']';
         const contents = JSON.parse(manipulated);
-        // const contents = eval(e.target.result);
         const colorMap = createColorMap(contents, colors);
         const convertedApps = convertAppObj(contents, colorMap);
         setApps(convertedApps);
@@ -49,6 +48,8 @@ const DropZone = (props) => {
   const dragLeave = (e) => {
     e.preventDefault();
   };
+
+  // Validate filetype and transfer file
 
   const fileDrop = (e) => {
     e.preventDefault();
