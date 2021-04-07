@@ -33,7 +33,7 @@ function DependencyChart() {
   const depList = [];
   const deps = [];
   for (let i = 0; i < apps.length; i++) {
-    let result = apps[i].dependencies;
+    let result = apps[i].data.dependencies;
     for (let j = 0; j < result.length; j++) {
       if (!deps.includes(result[j].name)) {
         deps.push(result[j].name);
@@ -50,9 +50,9 @@ function DependencyChart() {
   for (let i = 0; i < appList.length; i++) {
     let index = 0;
     for (let j = 0; j < depList.length; j++) {
-      if (!apps[i].dependencies[index]) depList[j][apps[i].id] = 'N/A';
-      else if (depList[j].name === apps[i].dependencies[index].name) {
-        depList[j][apps[i].id] = apps[i].dependencies[index].version;
+      if (!apps[i].data.dependencies[index]) depList[j][apps[i].id] = 'N/A';
+      else if (depList[j].name === apps[i].data.dependencies[index].name) {
+        depList[j][apps[i].id] = apps[i].data.dependencies[index].version;
         index++;
       } else {
         depList[j][apps[i].id] = 'N/A';
