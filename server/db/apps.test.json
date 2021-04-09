@@ -1,0 +1,16 @@
+{
+  "_id": "testID",
+  "appArray": [
+    {
+      "dependencies": [],
+      "devDependencies": [],
+      "optionalDependencies": [],
+      "id": "Atriom",
+      "name": "Atriom",
+      "remote": "",
+      "overrides": [],
+      "consumes": [],
+      "modules": []
+    }
+  ]
+}
