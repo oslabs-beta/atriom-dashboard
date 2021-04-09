@@ -22,9 +22,6 @@ export default ({ id, data }) => {
     position: { x: 100, y: 100 },
   };
 
-
-  console.log(data);
-
   return (
     <div className="AppContainer">
       <ReactFlowProvider>
