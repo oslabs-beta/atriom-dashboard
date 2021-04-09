@@ -1,0 +1,14 @@
+[
+  {
+    "username": "TestUsername",
+    "password": "test",
+    "id": 1,
+    "apps": [{ "name": "Atriom", "mongo_id": "testID" }]
+  },
+  {
+    "username": "OtherUser",
+    "password": "somethingElse",
+    "id": 2,
+    "apps": [{ "name": "Twitter", "mongo_id": "testID2" }]
+  }
+]
