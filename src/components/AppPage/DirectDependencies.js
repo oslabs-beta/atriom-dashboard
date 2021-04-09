@@ -10,27 +10,23 @@ import Paper from '@material-ui/core/Paper';
 const DirectDependecies = ({ dependencies }) => {
   return (
     <TableContainer component={Paper}>
-      <center className="appPageTable">
+      <center>
         <h4>Direct Dependencies</h4>
       </center>
-      <Table size="small" className="appPageTable">
+      <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell className="tableData">name</TableCell>
-            <TableCell align="right" className="tableData">
-              version
-            </TableCell>
+            <TableCell>name</TableCell>
+            <TableCell align="right">version</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {dependencies.map((element) => (
             <TableRow key={element.name}>
-              <TableCell component="th" scope="row" className="tableData">
+              <TableCell component="th" scope="row">
                 {element.name}
               </TableCell>
-              <TableCell align="right" className="tableData">
-                {element.version}
-              </TableCell>
+              <TableCell align="right">{element.version}</TableCell>
             </TableRow>
           ))}
         </TableBody>

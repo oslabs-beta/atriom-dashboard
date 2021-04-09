@@ -10,27 +10,23 @@ import Paper from '@material-ui/core/Paper';
 const Consumes = ({ consumes }) => {
   return (
     <TableContainer component={Paper}>
-      <center className="appPageTable">
+      <center>
         <h4>Consumes</h4>
       </center>
-      <Table size="small" className="appPageTable">
+      <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell className="tableData">name</TableCell>
-            <TableCell align="right" className="tableData">
-              file
-            </TableCell>
+            <TableCell>name</TableCell>
+            <TableCell align="right">file</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {consumes.map((element) => (
             <TableRow key={element.id}>
-              <TableCell component="th" scope="row" className="tableData">
+              <TableCell component="th" scope="row">
                 {element.data.name}
               </TableCell>
-              <TableCell align="right" className="tableData">
-                {element.data.usedIn[0].file}
-              </TableCell>
+              <TableCell align="right">{element.data.usedIn[0].file}</TableCell>
             </TableRow>
           ))}
         </TableBody>

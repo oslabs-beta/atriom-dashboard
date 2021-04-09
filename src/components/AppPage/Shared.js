@@ -14,27 +14,23 @@ const Shared = ({ shared }) => {
 
   return (
     <TableContainer component={Paper}>
-      <center className="appPageTable">
+      <center>
         <h4>Shared</h4>
       </center>
-      <Table size="small" className="appPageTable">
+      <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell className="tableData">name</TableCell>
-            <TableCell align="right" className="tableData">
-              version
-            </TableCell>
+            <TableCell>name</TableCell>
+            <TableCell align="right">version</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {shared.map((element) => (
             <TableRow key={element.id}>
-              <TableCell component="th" scope="row" className="tableData">
+              <TableCell component="th" scope="row">
                 {element.name}
               </TableCell>
-              <TableCell align="right" className="tableData">
-                {element.version}
-              </TableCell>
+              <TableCell align="right">{element.version}</TableCell>
             </TableRow>
           ))}
         </TableBody>

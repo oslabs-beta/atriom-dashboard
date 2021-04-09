@@ -10,29 +10,25 @@ import Paper from '@material-ui/core/Paper';
 const Modules = ({ modules }) => {
   return (
     <TableContainer component={Paper}>
-      <center className="appPageTable">
+      <center>
         <h4>Modules</h4>
       </center>
-      <Table size="small" className="appPageTable">
+      <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell className="tableData">name</TableCell>
-            <TableCell className="tableData">file</TableCell>
-            <TableCell align="right" className="tableData">
-              requires
-            </TableCell>
+            <TableCell>name</TableCell>
+            <TableCell>file</TableCell>
+            <TableCell align="right">requires</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {modules.map((module) => (
             <TableRow key={module.id}>
-              <TableCell component="th" scope="row" className="tableData">
+              <TableCell component="th" scope="row">
                 {module.name}
               </TableCell>
-              <TableCell className="tableData">{module.file}</TableCell>
-              <TableCell align="right" className="tableData">
-                {module.requires}
-              </TableCell>
+              <TableCell>{module.file}</TableCell>
+              <TableCell align="right">{module.requires}</TableCell>
             </TableRow>
           ))}
         </TableBody>
