@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-let MONGO_URI;
-if (process.env.NODE_ENV === 'testing') {
-  MONGO_URI = process.env.MONGO_URI_TEST;
-} else {
-  MONGO_URI = process.env.MONGO_URI;
-}
+const MONGO_URI =
+  process.env.NODE_ENV === 'testing'
+    ? process.env.MONGO_URI_TEST
+    : process.env.MONGO_URI;
 
 mongoose
   .connect(MONGO_URI, {
