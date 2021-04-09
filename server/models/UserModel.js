@@ -4,7 +4,7 @@ require('dotenv').config();
 const PG_URI =
   process.env.NODE_ENV === 'testing'
     ? process.env.PG_URI_TEST
-    : process.env.PG_URI_DEV;
+    : process.env.PG_URI;
 
 const pool = new Pool({
   connectionString: PG_URI,
