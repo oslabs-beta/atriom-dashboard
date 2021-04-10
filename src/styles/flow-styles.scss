@@ -11,18 +11,18 @@
 }
 
 .AppContainer {
-  height: 375px;
-  width: 375px;
+  height: 380px;
+  width: 380px;
 }
 
 .AppNode {
-  // background-color: grey;
   height: 150px;
   width: 150px;
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10px;
 }
 
 .AppNode-label {
@@ -37,6 +37,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 10px;
 
   p {
     text-align: center;
@@ -72,7 +73,6 @@
 .AppKey-color {
   width: 30px;
   height: 30px;
-  // border-radius: 100px;
   margin-right: 10px;
 }
 

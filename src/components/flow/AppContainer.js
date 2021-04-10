@@ -3,10 +3,6 @@ import ReactFlow, { ReactFlowProvider } from 'react-flow-renderer';
 import AppNode from './AppNode';
 import ModuleNode from './ModuleNode';
 
-const onLoad = (reactFlowInstance) => {
-  reactFlowInstance.fitView({ padding: 0.1 });
-};
-
 const nodeTypes = {
   AppNode,
   ModuleNode,
@@ -31,7 +27,6 @@ export default ({ id, data }) => {
           nodesDraggable={false}
           zoomOnScroll={false}
           zoomOnPinch={false}
-          onLoad={onLoad}
         />
       </ReactFlowProvider>
     </div>

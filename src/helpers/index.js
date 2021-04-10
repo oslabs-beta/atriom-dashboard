@@ -31,8 +31,7 @@ export const convertAppObj = (apps, colorMap) =>
     appFlowObj.data.consumesNodes = convertConsumedModules(consumes, colorMap);
 
     appFlowObj.data.color = colorMap[app.id];
-    appFlowObj.data.link = `/apps/${id}`;
-    appFlowObj.link = `/apps/${id}`;
+    appFlowObj.data.link = `/app/${id}`;
 
     return appFlowObj;
   });
@@ -76,6 +75,6 @@ export const validateFileType = (e, files) => {
     file.name.substring(file.name.lastIndexOf('.') + 1, file.name.length) ||
     file.name;
 
-  if (fileType === 'json' || fileType === 'data') return file;
+  if (fileType === 'dat') return file;
   else return false;
 };

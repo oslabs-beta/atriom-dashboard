@@ -17,13 +17,13 @@ export default function AppNode({ id, data }) {
 
   return linkActive ? (
     <div className="AppNode" style={{ backgroundColor: data.color }}>
-      <Link to={`/app/${id}`} style={{ textDecoration: 'none' }}>
+      <Link to={data.link} style={{ textDecoration: 'none' }}>
         <h4 className="AppNode-label">{data.label}</h4>
       </Link>
     </div>
   ) : (
     <Link
-      to={`/app/${id}`}
+      to={data.link}
       onClick={(e) => e.preventDefault()}
       onMouseUp={clickOrDrag}
       onMouseDown={mouseDownCoords}
