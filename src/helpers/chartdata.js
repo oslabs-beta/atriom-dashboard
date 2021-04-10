@@ -5,7 +5,7 @@ export const createAppList = (apps) => {
   const appList = [];
   for (let i = 0; i < apps.length; i++) {
     appList.push({
-      Header: <Link to={`/app/${apps[i].id}`}>{apps[i].id}</Link>,
+      Header: <Link to={apps[i].data.link}>{apps[i].id}</Link>,
       accessor: `${apps[i].id}`,
     });
   }
