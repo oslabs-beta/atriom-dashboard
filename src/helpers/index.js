@@ -76,6 +76,6 @@ export const validateFileType = (e, files) => {
     file.name.substring(file.name.lastIndexOf('.') + 1, file.name.length) ||
     file.name;
 
-  if (fileType === 'json' || fileType === 'data') return file;
+  if (fileType === 'dat') return file;
   else return false;
 };
