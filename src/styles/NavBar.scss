@@ -24,12 +24,15 @@ $accent-yellow: #e0bf2b;
   );
 }
 
-.menuIcon path {
+.menuButton{
   color: $light;
 
-  // &:hover {
-  //   color: $accent-yellow;
-  // } testing hover feature
+  &:hover {
+    path {
+      color: $accent-yellow;
+     // testing hover feature
+    }
+  }
 }
 
 .navLinks a {
