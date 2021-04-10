@@ -32,7 +32,6 @@ export const convertAppObj = (apps, colorMap) =>
 
     appFlowObj.data.color = colorMap[app.id];
     appFlowObj.data.link = `/app/${id}`;
-    appFlowObj.link = `/app/${id}`;
 
     return appFlowObj;
   });
@@ -68,3 +67,14 @@ export const createColorMap = (apps, colors) =>
     colorMap[app.id] = colors[i];
     return colorMap;
   }, {});
+
+// Returns file if valid, or false if invalid
+export const validateFileType = (e, files) => {
+  const file = files[0];
+  const fileType =
+    file.name.substring(file.name.lastIndexOf('.') + 1, file.name.length) ||
+    file.name;
+
+  if (fileType === 'dat') return file;
+  else return false;
+};

@@ -11,18 +11,23 @@
 }
 
 .AppContainer {
+<<<<<<< HEAD
   height: 475px;
   width: 475px;
+=======
+  height: 380px;
+  width: 380px;
+>>>>>>> 877c722f45d109464759869f890fab78d5443e71
 }
 
 .AppNode {
-  // background-color: grey;
   height: 150px;
   width: 150px;
   border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10px;
 }
 
 .AppNode-label {
@@ -37,6 +42,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 10px;
 
   p {
     text-align: center;
@@ -95,7 +101,10 @@
 .AppKey-color {
   width: 30px;
   height: 30px;
+<<<<<<< HEAD
   border-radius: 4px;
+=======
+>>>>>>> 877c722f45d109464759869f890fab78d5443e71
   margin-right: 10px;
 
 }

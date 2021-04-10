@@ -4,10 +4,6 @@ import AppNode from './AppNode';
 import ModuleNode from './ModuleNode';
 import MoreNode from './MoreNode';
 
-const onLoad = (reactFlowInstance) => {
-  reactFlowInstance.fitView({ padding: 0.1 });
-};
-
 const nodeTypes = {
   AppNode,
   ModuleNode,
@@ -60,7 +56,6 @@ export default ({ id, data }) => {
           nodesDraggable={false}
           zoomOnScroll={false}
           zoomOnPinch={false}
-          onLoad={onLoad}
         />
       </ReactFlowProvider>
     </div>
