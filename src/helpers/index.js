@@ -31,8 +31,8 @@ export const convertAppObj = (apps, colorMap) =>
     appFlowObj.data.consumesNodes = convertConsumedModules(consumes, colorMap);
 
     appFlowObj.data.color = colorMap[app.id];
-    appFlowObj.data.link = `/apps/${id}`;
-    appFlowObj.link = `/apps/${id}`;
+    appFlowObj.data.link = `/app/${id}`;
+    appFlowObj.link = `/app/${id}`;
 
     return appFlowObj;
   });
