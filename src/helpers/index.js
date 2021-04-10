@@ -32,7 +32,6 @@ export const convertAppObj = (apps, colorMap) =>
 
     appFlowObj.data.color = colorMap[app.id];
     appFlowObj.data.link = `/app/${id}`;
-    appFlowObj.link = `/app/${id}`;
 
     return appFlowObj;
   });
