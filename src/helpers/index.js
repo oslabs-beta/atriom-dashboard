@@ -68,3 +68,14 @@ export const createColorMap = (apps, colors) =>
     colorMap[app.id] = colors[i];
     return colorMap;
   }, {});
+
+// Returns file if valid, or false if invalid
+export const validateFileType = (e, files) => {
+  const file = files[0];
+  const fileType =
+    file.name.substring(file.name.lastIndexOf('.') + 1, file.name.length) ||
+    file.name;
+
+  if (fileType === 'json' || fileType === 'data') return file;
+  else return false;
+};
