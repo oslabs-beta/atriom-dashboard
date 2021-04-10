@@ -272,6 +272,39 @@ export default [
           },
         ],
       },
+      {
+        consumingApplicationID: 'home',
+        applicationID: 'checkout',
+        name: 'dummy1',
+        usedIn: [
+          {
+            file: 'src/HomeContent.jsx',
+            url: 'http://github.com/src/HomeContent.jsx',
+          },
+        ],
+      },
+      {
+        consumingApplicationID: 'home',
+        applicationID: 'search',
+        name: 'dummy2',
+        usedIn: [
+          {
+            file: 'src/HomeContent.jsx',
+            url: 'http://github.com/src/HomeContent.jsx',
+          },
+        ],
+      },
+      {
+        consumingApplicationID: 'home',
+        applicationID: 'home',
+        name: 'dummy3',
+        usedIn: [
+          {
+            file: 'src/HomeContent.jsx',
+            url: 'http://github.com/src/HomeContent.jsx',
+          },
+        ],
+      },
     ],
     modules: [
       {
