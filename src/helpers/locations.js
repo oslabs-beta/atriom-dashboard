@@ -7,7 +7,7 @@ export const appLocations = [
   { x: 530, y: -200 },
   { x: 980, y: -150 },
   { x: 230, y: 180 },
-];
+];;
 
 const locations = [
   { x: 135, y: 0 },
