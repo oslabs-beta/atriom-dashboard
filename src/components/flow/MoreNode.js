@@ -8,8 +8,6 @@ const MoreNode = ({ id, data }) => {
 
   const LightTooltip = withStyles((theme) => ({
     tooltip: {
-      // backgroundColor: '#1c2426',
-      // color: '#f5f5f5',
       color: '#1c2426',
       backgroundColor: '#f5f5f5',
       fontSize: 13.5,
