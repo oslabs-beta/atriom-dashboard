@@ -4,7 +4,7 @@ import colors from '../../helpers/colors';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import { createColorMap, convertAppObj, validateFileType } from '../../helpers';
+import { createColorMap, convertAppObj, validateFileType, locationsMap } from '../../helpers';
 import '../../styles/DropZone.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +38,8 @@ const DropZone = (props) => {
           contents[0].overrides
         ) {
           const colorMap = createColorMap(contents, colors);
-          const convertedApps = convertAppObj(contents, colorMap);
+          const nodeColors = convertAppObj(contents, colorMap);
+          const convertedApps = locationsMap(nodeColors);
           setApps(convertedApps);
         } else setErrorMessage('Please upload a valid file');
       };
