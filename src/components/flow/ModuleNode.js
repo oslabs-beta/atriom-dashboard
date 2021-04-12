@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ModuleModal from './ModuleModal';
 
 function ModuleNode({ data }) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
+  const mouseDownCoords = (e) => {
+    window.checkForDrag = e.clientX;
+  };
+
+  const clickOrDrag = (e) => {
+    const mouseUp = e.clientX;
+    if (mouseUp < window.checkForDrag + 1 && mouseUp > window.checkForDrag - 1)
+      setOpen(true);
   };
 
   const handleClose = () => {
@@ -17,7 +23,8 @@ function ModuleNode({ data }) {
       <div
         className="ModuleNode"
         style={{ backgroundColor: data.color }}
-        onClick={handleOpen}
+        onMouseUp={clickOrDrag}
+        onMouseDown={mouseDownCoords}
       >
         <p>{data.label}</p>
       </div>
