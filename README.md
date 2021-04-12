@@ -5,8 +5,8 @@
 ### Introduction
 
 Atriom is a developer tool that visualizes component relationships and shared dependencies of Module Federated Applications.
-Generate your application file with Atriom Plugin
 
+- Generate your application file with Atriom Plugin
 - Visit Atriom.com
   - Signup / Login
   - or use Guest Mode
