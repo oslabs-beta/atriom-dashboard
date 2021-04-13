@@ -15,7 +15,7 @@ Atriom is a developer tool that visualizes component relationships and shared de
 ### Prerequisites
 
 - Atriom plugin: <link to npm>
-- Webpack <version>
+- Webpack ^5.31.0
 
 ### Installing
 
