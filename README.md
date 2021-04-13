@@ -35,9 +35,5 @@ testing: `npm test`
 
 - npm
 - Webpack
-- React (Hooks, Context API, Router)
 - JavaScript (ES6+)
-- Express
-- SQL database(PostgreSQL)
-- NoSQL database (MongoDB)
 - Jest testing suite
