@@ -42,7 +42,7 @@ export default ({ id, data }) => {
         nodesDraggable={false}
         zoomOnScroll={false}
         zoomOnPinch={false}
-        onLoad={onLoad}
+        // onLoad={onLoad}
       />
     </ReactFlowProvider>
   </div>
