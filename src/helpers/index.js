@@ -16,7 +16,7 @@ export const convertAppObj = (apps, colorMap) =>
 
     // Add React Flow Properties
     appFlowObj.type = 'AppContainer';
-    appFlowObj.position = appLocations[i];
+    // appFlowObj.position = appLocations[i];
     appFlowObj.data = {
       label: name,
       dependencies,
@@ -64,7 +64,8 @@ export const convertConsumedModules = (mods, colorMap) =>
 // Returns an object. Keys are application ids and values are color strings
 export const createColorMap = (apps, colors) =>
   apps.reduce((colorMap, app, i) => {
-    colorMap[app.id] = colors[i];
+    let color = i === 0 ? 0 : i % 8;
+    colorMap[app.id] = colors[color];
     return colorMap;
   }, {});
 
@@ -78,3 +79,28 @@ export const validateFileType = (e, files) => {
   if (fileType === 'dat') return file;
   else return false;
 };
+
+// Add container positions. If there are more than 8 apps, app locations are dynamically generated.
+export const locationsMap = (apps) => {
+  if (apps.length <= 8) {
+    return apps.map((app, i) => {
+      app.position = appLocations[i];
+      return app;
+    })
+  } else {
+    let columns = 0;
+    let x = -350;
+    let y = -200
+    return apps.map((app, i) => {
+      if (i % 5 === 0) {
+        y += 430;
+        x = 100;
+      } else {
+        x += 400;
+      }
+
+      app.position = { x, y };
+      return app;
+    })
+  }
+}
