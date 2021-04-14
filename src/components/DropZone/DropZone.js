@@ -4,7 +4,7 @@ import colors from '../../helpers/colors';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import { createColorMap, convertAppObj } from '../../helpers';
+import { createColorMap, convertAppObj, validateFileType, locationsMap } from '../../helpers';
 import '../../styles/DropZone.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,10 +19,10 @@ const DropZone = (props) => {
   const [appFile, setAppFile] = useState();
   const [errorMessage, setErrorMessage] = useState('');
 
+  // Read file, validate contents, manipulate data
+
   useEffect(() => {
     if (apps.length && Array.isArray(apps)) props.history.push('/home');
-
-    if (errorMessage) console.log(errorMessage);
     if (appFile) {
       const reader = new FileReader();
       reader.readAsText(appFile, 'UTF-8');
@@ -30,10 +30,18 @@ const DropZone = (props) => {
         const raw = e.target.result;
         const manipulated = '[' + raw.slice(0, raw.length - 1) + ']';
         const contents = JSON.parse(manipulated);
-        // const contents = eval(e.target.result);
-        const colorMap = createColorMap(contents, colors);
-        const convertedApps = convertAppObj(contents, colorMap);
-        setApps(convertedApps);
+        if (
+          contents[0].consumes &&
+          contents[0].dependencies &&
+          contents[0].id &&
+          contents[0].name &&
+          contents[0].overrides
+        ) {
+          const colorMap = createColorMap(contents, colors);
+          const nodeColors = convertAppObj(contents, colorMap);
+          const convertedApps = locationsMap(nodeColors);
+          setApps(convertedApps);
+        } else setErrorMessage('Please upload a valid file');
       };
     }
   });
@@ -50,21 +58,15 @@ const DropZone = (props) => {
     e.preventDefault();
   };
 
+  // Validate filetype and transfer file
+
   const fileDrop = (e) => {
     e.preventDefault();
     const files = e.dataTransfer.files;
-    const file = files[0];
-    const fileType =
-      file.name.substring(file.name.lastIndexOf('.') + 1, file.name.length) ||
-      file.name;
-
-    let valid;
-    if (fileType === 'js' || fileType === 'json' || fileType === 'data')
-      valid = true;
-    else valid = false;
+    const valid = validateFileType(e, files);
 
     if (valid) {
-      setAppFile(file);
+      setAppFile(valid);
       setErrorMessage(null);
     } else setErrorMessage('Please upload a valid file');
   };

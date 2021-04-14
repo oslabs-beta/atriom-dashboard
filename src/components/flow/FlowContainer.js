@@ -3,6 +3,7 @@ import ReactFlow, { Controls } from 'react-flow-renderer';
 import AppContainer from './AppContainer';
 import AppsContext from '../../contexts/AppsContext';
 import AppKey from './AppKey';
+import '../../styles/flow-styles.scss';
 
 const nodeTypes = {
   AppContainer,
@@ -11,7 +12,7 @@ const nodeTypes = {
 
 const appKeyEl = {
   id: 'key',
-  position: { x: 0, y: 0 },
+  position: { x: -250, y: 200 },
   type: 'AppKey',
 };
 
@@ -19,7 +20,7 @@ const FlowContainer = () => {
   const { apps } = useContext(AppsContext);
 
   const onLoad = useCallback((instance) => {
-    instance.fitView({ padding: 0.05 });
+    instance.fitView();
   }, []);
 
   if (apps.length)

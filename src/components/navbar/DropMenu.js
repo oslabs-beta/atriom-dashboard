@@ -16,7 +16,7 @@ export default function DropMenu({ apps }) {
     setOpen((prev) => !prev);
   };
 
-  const handleClose = (event) => {
+  const handleClose = () => {
     setOpen(false);
     setAnchorEl(null);
   };

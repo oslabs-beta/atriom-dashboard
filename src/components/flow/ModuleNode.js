@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function ModuleNode({ data }) {
-  const classes = useStyles();
+  const [open, setOpen] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = React.useState(false);
@@ -49,9 +49,9 @@ function ModuleNode({ data }) {
       <div
         className="ModuleNode"
         style={{ backgroundColor: data.color }}
-        onClick={handleOpen}
+        onMouseUp={clickOrDrag}
+        onMouseDown={mouseDownCoords}
       >
-        {/* <MaterialModal /> */}
         <p>{data.label}</p>
       </div>
       {/* <Modal
