@@ -3,10 +3,16 @@
   width: 100vw;
   // background-color: #1c2426;
   // background: rgb(12,29,36);
+  // background: radial-gradient(
+  //   circle,
+  //   rgba(12, 29, 36, 1) 0%,
+  //   rgba(23, 43, 54, 1) 100%
+  // );
+
   background: radial-gradient(
     circle,
-    rgba(12, 29, 36, 1) 0%,
-    rgba(23, 43, 54, 1) 100%
+    rgb(8, 20, 26) 0%,
+    rgb(16, 30, 37) 100%
   );
 }
 
