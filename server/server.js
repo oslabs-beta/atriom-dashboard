@@ -10,13 +10,13 @@ app.use(cookieParser());
 // const authRouter = require('./routes/auth');
 
 // app.use('/auth', authRouter);
-if (process.env.NODE_ENV === 'prod') {
-  app.use('/build', express.static(path.join(__dirname, '../build/')));
+// if (process.env.NODE_ENV === 'prod') {
+app.use('/build', express.static(path.join(__dirname, '../build/')));
 
-  app.get('*', (req, res) =>
-    res.status(200).sendFile(path.join(__dirname, '../index.html'))
-  );
-}
+app.get('*', (req, res) =>
+  res.status(200).sendFile(path.join(__dirname, '../index.html'))
+);
+// }
 
 app.get('*', (req, res) => {
   return res.status(404).json();
