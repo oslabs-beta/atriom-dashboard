@@ -4,7 +4,12 @@ import colors from '../../helpers/colors';
 import { Alert } from '@material-ui/lab';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import { createColorMap, convertAppObj, validateFileType, locationsMap } from '../../helpers';
+import {
+  createColorMap,
+  convertAppObj,
+  validateFileType,
+  locationsMap,
+} from '../../helpers';
 import '../../styles/DropZone.scss';
 
 const useStyles = makeStyles((theme) => ({
@@ -40,6 +45,7 @@ const DropZone = (props) => {
           const colorMap = createColorMap(contents, colors);
           const nodeColors = convertAppObj(contents, colorMap);
           const convertedApps = locationsMap(nodeColors);
+          localStorage.setItem('apps', JSON.stringify(convertedApps));
           setApps(convertedApps);
         } else setErrorMessage('Please upload a valid file');
       };

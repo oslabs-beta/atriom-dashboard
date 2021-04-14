@@ -26,6 +26,7 @@ const NavBar = () => {
               to="/"
               onClick={() => {
                 setApps([]);
+                localStorage.clear();
               }}
             >
               Upload New File...
