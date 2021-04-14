@@ -11,14 +11,14 @@ import DeviceHubIcon from '@material-ui/icons/DeviceHub';
 import EcoRoundedIcon from '@material-ui/icons/EcoRounded';
 
 const AppListCollapse = ({ apps, close }) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   const handleClick = () => {
     setOpen(!open);
   };
 
-  const renderAppList = () =>
-    apps.map((obj, i) => (
+  const renderAppList = () => {
+    return apps.map((obj, i) => (
       <Link to={`/app/${obj.id}`} key={`AppLink${i}`} onClick={close}>
         <ListItem className="MenuContentButton" key={obj.id}>
           <EcoRoundedIcon className="listIcon" />
@@ -26,6 +26,8 @@ const AppListCollapse = ({ apps, close }) => {
         </ListItem>
       </Link>
     ));
+  }
+
   return (
     <div className="ListCollapse">
       <ListItem button onClick={handleClick}>

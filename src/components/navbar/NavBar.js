@@ -17,10 +17,14 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar id="navbar">
           <DropMenu id="drop-menu" apps={apps} />
-          <Typography className="navLinks">
+          <img
+            src='../../../logos/BnW png/White-logo-no-background.svg'
+            alt="Atriom logo"
+            height="33px"
+            id="navLogo"
+          />
+          <Typography className="navLinks" id="dashboard-link" noWrap>
             <Link to="/">Dashboard</Link>
-          </Typography>
-          <Typography className="navLinks" noWrap>
             <Link to="/dependencies">Dependency Chart</Link>
             <Link
               to="/"

@@ -13,6 +13,7 @@ $accent-yellow: #e0bf2b;
 .NavBar-container {
   // box-shadow: 0px 4px 70px rgb(29, 29, 29);
   z-index: 1000;
+  display: flex;
 }
 
 #navbar {
@@ -22,6 +23,11 @@ $accent-yellow: #e0bf2b;
     rgba(18, 82, 93, 1) 0%,
     rgba(31, 65, 84, 1) 100%
   );
+  display: flex;
+
+  p {
+    margin-left: auto;
+  }
 }
 
 .menuButton{
@@ -40,7 +46,7 @@ $accent-yellow: #e0bf2b;
   color: $light;
   font-weight: 400;
   font-size: 16px;
-  padding-left: 30px;
+  padding-left: 20px;
   padding-right: 20px;
 
   &:hover {
@@ -50,20 +56,23 @@ $accent-yellow: #e0bf2b;
   }
 }
 
-.searchInput {
-  margin-right: 26px;
-}
 
-.search {
-  width: 240px;
-  // height: 28px;
-  display: flex;
-  margin-left: auto;
-  background-color: rgba(228, 228, 228, 0.85);
-  color: $font-standard;
-  align-items: center;
-  padding: 2px;
-  border-radius: 20px;
+// -------- Search Bar styling ------------
+
+// .searchInput {
+//   margin-right: 26px;
+// }
+
+// .search {
+//   width: 240px;
+//   // height: 28px;
+//   display: flex;
+//   margin-left: auto;
+//   background-color: rgba(228, 228, 228, 0.85);
+//   color: $font-standard;
+//   align-items: center;
+//   padding: 2px;
+//   border-radius: 20px;
 
   // &:hover {
   //   background-color: rgba(214, 214, 214, 0.3);
@@ -74,10 +83,15 @@ $accent-yellow: #e0bf2b;
   //   background-color: rgba(214, 214, 214, 0.3);
   //   border: $font-standard;
   // }
-}
+// }
 
-.searchIcon {
-  margin: auto 10px;
-  padding-top: 2px;
-  color: $font-standard;
-}
+// .searchIcon {
+//   margin: auto 10px;
+//   padding-top: 2px;
+//   color: $font-standard;
+// }
+
+// .dashboard-link {
+//   display: flex;
+//   margin-left: auto;
+// }
