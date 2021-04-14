@@ -7,7 +7,7 @@ function DropZoneContainer({ history }) {
     <div className="content">
       {/* <h1 className="title">ATRIOM</h1> */}
       <img
-        src='../../../logos/Logo Files/For Web/svg/Color logo - no background.svg'
+        src='../../../logos/Color logo - no background.svg'
         alt="Atriom logo"
         height="150vh"
         id="DZLogo"
