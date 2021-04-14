@@ -11,6 +11,11 @@ module.exports = {
   devServer: {
     publicPath: '/build/',
     hot: true,
+    proxy: {
+      '/': {
+        target: 'http://localhost:3000',
+      },
+    },
   },
   module: {
     rules: [
@@ -30,7 +35,6 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        // use: [MiniCssExtractPlugin.loader, 'css-loader'],
         use: ['style-loader', 'css-loader'],
       },
       {

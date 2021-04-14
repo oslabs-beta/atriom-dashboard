@@ -27,25 +27,23 @@ const App = (props) => {
         <div className="App">
           <NavBar />
           <Switch>
-            {/* <Route path="/" exact component={DropZoneContainer} /> */}
             <Route path="/" exact component={FlowContainer} />
-            <Route path="/home" exact component={FlowContainer} />
             {renderAppRoutes()}
             <Route path="/dependencies" component={DependencyChart} />
           </Switch>
         </div>
       </Router>
     );
-  else
-    return (
-      <Router>
-        <div className="App">
-          <Switch>
-            <Route path="/" exact component={DropZoneContainer} />
-          </Switch>
-        </div>
-      </Router>
-    );
+
+  return (
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={DropZoneContainer} />
+        </Switch>
+      </div>
+    </Router>
+  );
 };
 
 export default App;
