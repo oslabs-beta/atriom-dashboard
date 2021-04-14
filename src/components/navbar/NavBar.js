@@ -18,7 +18,7 @@ const NavBar = () => {
         <Toolbar id="navbar">
           <DropMenu id="drop-menu" apps={apps} />
           <img
-            src='../../../logos/Logo Files/For Web/svg/Color logo - no background.svg'
+            src='../src/images/colorLogo.svg'
             alt="Atriom logo"
             height="44px"
             id="navLogo"
