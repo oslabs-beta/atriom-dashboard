@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Search from './Search';
 import DropMenu from './DropMenu';
 import AppsContext from '../../contexts/AppsContext';
+import logo from '../../images/colorLogo.svg';
 
 const NavBar = () => {
   const { apps, setApps } = useContext(AppsContext);
@@ -17,12 +18,7 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar id="navbar">
           <DropMenu id="drop-menu" apps={apps} />
-          <img
-            src='../src/images/colorLogo.svg'
-            alt="Atriom logo"
-            height="44px"
-            id="navLogo"
-          />
+          <img src={logo} alt="Atriom logo" height="44px" id="navLogo" />
           <Typography className="navLinks" id="dashboard-link" noWrap>
             <Link to="/">Dashboard</Link>
             <Link to="/dependencies">Dependency Chart</Link>
