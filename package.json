@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=prod ebpack serve --open",
+    "start": "NODE_ENV=prod webpack serve --open",
     "build": "NODE_ENV=prod webpack",
     "test": "NODE_ENV=testing jest --watchAll --verbose",
     "test:watch": "jest --watch"
