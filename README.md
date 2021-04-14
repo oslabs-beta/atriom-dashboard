@@ -36,4 +36,5 @@ testing: `npm test`
 - npm
 - Webpack
 - JavaScript (ES6+)
+- Express
 - Jest testing suite
