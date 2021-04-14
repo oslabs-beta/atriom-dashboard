@@ -13,7 +13,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 const App = (props) => {
   const { apps } = useContext(AppsContext);
-  console.log(props);
 
   const renderAppRoutes = () =>
     apps.map((app, i) => (
