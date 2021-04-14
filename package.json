@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --open",
-    "build": "webpack",
+    "start": "NODE_ENV=prod ebpack serve --open",
+    "build": "NODE_ENV=prod webpack",
     "test": "NODE_ENV=testing jest --watchAll --verbose",
     "test:watch": "jest --watch"
   },

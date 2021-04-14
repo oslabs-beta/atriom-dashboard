@@ -14,8 +14,8 @@ Atriom is a developer tool that visualizes component relationships and shared de
 
 ### Prerequisites
 
-- Atriom plugin: <link to npm>
-- Webpack ^5.31.0
+- Atriom plugin: https://www.npmjs.com/package/atriom-plugin
+- Webpack version 5.31.0 or higher
 
 ### Installing
 
@@ -27,7 +27,7 @@ Atriom is a developer tool that visualizes component relationships and shared de
 
 ### Switching Environments
 
-We currently support `production` & `testing` environments. Environment variables are set by the following npm scripts
+We currently support `prod` & `testing` environments. Environment variables are set by the following npm scripts
 production: `npm start`, `npm build`
 testing: `npm test`
 
