@@ -26,27 +26,25 @@ export default ({ id, data }) => {
   };
 
   const moreNode = {
-    id: `more ${ id }`,
+    id: `more ${id}`,
     type: 'MoreNode',
     data,
-    position: {x: 40, y: 40},
-  }
-
+    position: { x: 40, y: 40 },
+  };
 
   return data.consumesNodes.length <= 8 ? (
     <div className="AppContainer">
-    <ReactFlowProvider>
-      <ReactFlow
-        elements={[appNode, ...data.consumesNodes]}
-        nodeTypes={nodeTypes}
-        nodesDraggable={false}
-        zoomOnScroll={false}
-        zoomOnPinch={false}
-      />
-    </ReactFlowProvider>
-  </div>
-  )
-  :(
+      <ReactFlowProvider>
+        <ReactFlow
+          elements={[appNode, ...data.consumesNodes]}
+          nodeTypes={nodeTypes}
+          nodesDraggable={false}
+          zoomOnScroll={false}
+          zoomOnPinch={false}
+        />
+      </ReactFlowProvider>
+    </div>
+  ) : (
     <div className="AppContainer">
       <ReactFlowProvider>
         <ReactFlow

@@ -6,6 +6,7 @@ import { createColorMap, convertAppObj, locationsMap } from '../helpers';
 
 export default ({ children }) => {
   const [apps, setApps] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // const colorMap = createColorMap(appData, colors);
@@ -13,10 +14,15 @@ export default ({ children }) => {
     // const convertedApps = locationsMap(nodeColors);
     // setApps(convertedApps);
     const apps = localStorage.getItem('apps');
-    if (apps) setApps(JSON.parse(apps));
-    else localStorage.clear();
+    if (apps) {
+      setApps(JSON.parse(apps));
+      setLoading(false);
+    } else {
+      localStorage.clear();
+      setLoading(false);
+    }
   }, []);
 
   const { Provider } = AppsContext;
-  return <Provider value={{ apps, setApps }}>{children}</Provider>;
+  return <Provider value={{ apps, setApps, loading }}>{children}</Provider>;
 };
