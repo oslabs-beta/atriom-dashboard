@@ -3,10 +3,12 @@ import AppsContext from './AppsContext';
 import appData from './ATRIOM';
 import colors from '../helpers/colors';
 import { createColorMap, convertAppObj, locationsMap } from '../helpers';
+import { ModalContext } from './ModalContext'
 
 export default ({ children }) => {
   const [apps, setApps] = useState([]);
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     // const colorMap = createColorMap(appData, colors);
@@ -24,5 +26,6 @@ export default ({ children }) => {
   }, []);
 
   const { Provider } = AppsContext;
+  
   return <Provider value={{ apps, setApps, loading }}>{children}</Provider>;
 };

@@ -11,6 +11,7 @@ import '../styles.scss';
 import '../styles/AppPage.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+
 const App = () => {
   const { apps, loading } = useContext(AppsContext);
 
