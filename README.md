@@ -1,6 +1,6 @@
 # Atriom Dashboard
 
-[Atriom Logo](/src/images/atriom-bg.png)
+![Atriom Logo](/src/images/atriom-bg.png)
 
 ## Getting Started
 
