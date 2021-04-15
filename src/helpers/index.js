@@ -11,14 +11,15 @@ export const convertAppObj = (apps, colorMap) =>
       modules,
       overrides,
     } = app;
-    // const appFlowObj = { id, dependencies, devDependencies, modules };
-    const appFlowObj = { id };
+    let altName;
+    if (!name || !id) altName = `app-${i}`;
+    const appFlowObj = { id: id || altName };
 
     // Add React Flow Properties
     appFlowObj.type = 'AppContainer';
     // appFlowObj.position = appLocations[i];
     appFlowObj.data = {
-      label: name,
+      label: name || altName,
       dependencies,
       devDependencies,
       overrides,
@@ -31,7 +32,7 @@ export const convertAppObj = (apps, colorMap) =>
     appFlowObj.data.consumesNodes = convertConsumedModules(consumes, colorMap);
 
     appFlowObj.data.color = colorMap[app.id];
-    appFlowObj.data.link = `/app/${id}`;
+    appFlowObj.data.link = `/app/${id || altName}`;
 
     return appFlowObj;
   });
@@ -86,11 +87,11 @@ export const locationsMap = (apps) => {
     return apps.map((app, i) => {
       app.position = appLocations[i];
       return app;
-    })
+    });
   } else {
     let columns = 0;
     let x = -350;
-    let y = -200
+    let y = -200;
     return apps.map((app, i) => {
       if (i % 5 === 0) {
         y += 430;
@@ -101,6 +102,6 @@ export const locationsMap = (apps) => {
 
       app.position = { x, y };
       return app;
-    })
+    });
   }
-}
+};

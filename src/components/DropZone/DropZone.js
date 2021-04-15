@@ -38,8 +38,6 @@ const DropZone = (props) => {
         if (
           contents[0].consumes &&
           contents[0].dependencies &&
-          contents[0].id &&
-          contents[0].name &&
           contents[0].overrides
         ) {
           const colorMap = createColorMap(contents, colors);
