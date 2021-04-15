@@ -115,6 +115,9 @@ const DropZone = (props) => {
             {errorMessage}
           </Alert>
         </div>
+        <div className="sample" onClick={onClick}>
+          Try it with sample data!
+        </div>
       </div>
     );
   } else {
