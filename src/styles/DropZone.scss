@@ -9,9 +9,15 @@
   // border: 4px dashed #63d4e7;
   border: 4px dashed #42c3b9;
   margin-bottom: 20vh;
+  position: relative;
 }
 
 .drop-message {
   text-align: center;
   font-size: 20px;
+}
+.sample {
+  position: absolute;
+  top: 12em;
+  cursor: pointer;
 }
