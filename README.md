@@ -1,10 +1,12 @@
-# mars-mf
+# Atriom Dashboard
+
+![Atriom Logo](/src/images/atriom-bg.png)
 
 ## Getting Started
 
 ### Introduction
 
-Atriom is a developer tool that visualizes component relationships and shared dependencies of Module Federated Applications.
+Atriom is a developer tool that visualizes component relationships and shared dependencies of applications built using Webpack 5 Module Federation. [Click here](http://atriomdashboard.io) to view the project live!
 
 - Generate your application file with Atriom Plugin
 - Visit Atriom.com
