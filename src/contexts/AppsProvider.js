@@ -7,21 +7,25 @@ import { ModalContext } from './ModalContext'
 
 export default ({ children }) => {
   const [apps, setApps] = useState([]);
-  const [open, setOpen] = useState(false)
+  const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
-    const colorMap = createColorMap(appData, colors);
-    const nodeColors = convertAppObj(appData, colorMap);
-    const convertedApps = locationsMap(nodeColors);
-    setApps(convertedApps);
+    // const colorMap = createColorMap(appData, colors);
+    // const nodeColors = convertAppObj(appData, colorMap);
+    // const convertedApps = locationsMap(nodeColors);
+    // setApps(convertedApps);
+    const apps = localStorage.getItem('apps');
+    if (apps) {
+      setApps(JSON.parse(apps));
+      setLoading(false);
+    } else {
+      localStorage.clear();
+      setLoading(false);
+    }
   }, []);
 
   const { Provider } = AppsContext;
-  return (
-    <Provider value={{ apps, setApps }}>
-      {/* <ModalContext.Provider value={{ open, setOpen }}> */}
-        {children}
-      {/* </ModalContext.Provider> */}
-    </Provider>
-  );
+  
+  return <Provider value={{ apps, setApps, loading }}>{children}</Provider>;
 };

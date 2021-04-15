@@ -18,7 +18,10 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar id="navbar">
           <DropMenu id="drop-menu" apps={apps} />
-          <img src={logo} alt="Atriom logo" height="44px" id="navLogo" />
+          <Link to="/">
+            <img src={logo} alt="Atriom logo" height="44px" id="navLogo" />
+          </Link>
+
           <Typography className="navLinks" id="dashboard-link" noWrap>
             <Link to="/">Dashboard</Link>
             <Link to="/dependencies">Dependency Chart</Link>
@@ -26,6 +29,7 @@ const NavBar = () => {
               to="/"
               onClick={() => {
                 setApps([]);
+                localStorage.clear();
               }}
             >
               Upload New File...

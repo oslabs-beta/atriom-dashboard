@@ -6,6 +6,9 @@ $brand: #63d4e7;
 $accent-yellow: #e0bf2b;
 
 .ListCollapse {
+  max-height: 500px;
+  overflow: auto;
+
   span {
     color: $light;
   }

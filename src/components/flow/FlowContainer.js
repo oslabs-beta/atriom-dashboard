@@ -12,7 +12,7 @@ const nodeTypes = {
 
 const appKeyEl = {
   id: 'key',
-  position: { x: -250, y: 200 },
+  position: { x: -200, y: 0 },
   type: 'AppKey',
 };
 

@@ -26,7 +26,7 @@ const AppListCollapse = ({ apps, close }) => {
         </ListItem>
       </Link>
     ));
-  }
+  };
 
   return (
     <div className="ListCollapse">
@@ -35,7 +35,7 @@ const AppListCollapse = ({ apps, close }) => {
         <ListItemText primary="Applications" className="category listItem" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={open} timeout="auto" collapsedHeight="100px" unmountOnExit>
         <List component="div" disablePadding>
           {renderAppList()}
         </List>
