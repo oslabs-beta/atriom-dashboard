@@ -1,4 +1,6 @@
-# mars-mf
+# Atriom Dashboard
+
+[Atriom Logo](/src/images/atriom-bg.png)
 
 ## Getting Started
 
