@@ -11,6 +11,7 @@ import {
   locationsMap,
 } from '../../helpers';
 import '../../styles/DropZone.scss';
+import sample from '../../contexts/ATRIOM';
 
 const useStyles = makeStyles((theme) => ({
   outlinedError: {
@@ -75,6 +76,15 @@ const DropZone = (props) => {
     } else setErrorMessage('Please upload a valid file');
   };
 
+  const onClick = (e) => {
+    e.preventDefault();
+    const colorMap = createColorMap(sample, colors);
+    const nodeColors = convertAppObj(sample, colorMap);
+    const convertedApps = locationsMap(nodeColors);
+    localStorage.setItem('apps', JSON.stringify(convertedApps));
+    setApps(convertedApps);
+  };
+
   const classes = useStyles();
 
   if (errorMessage) {
@@ -103,6 +113,9 @@ const DropZone = (props) => {
             {errorMessage}
           </Alert>
         </div>
+        <div className="sample" onClick={onClick}>
+          Try it with sample data!
+        </div>
       </div>
     );
   } else {
@@ -116,6 +129,9 @@ const DropZone = (props) => {
       >
         <div className="drop-message">
           Drag and drop your file to view your dashboard
+        </div>
+        <div className="sample" onClick={onClick}>
+          Try it with sample data!
         </div>
       </div>
     );
