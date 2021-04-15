@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use('/build', express.static(path.join(__dirname, '../build/')));
+app.use('/src/images', express.static(path.join(__dirname, '../src/images/')));
 
 app.get('/', (req, res) =>
   res.status(200).sendFile(path.join(__dirname, '../index.html'))
