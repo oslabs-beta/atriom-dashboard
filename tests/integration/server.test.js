@@ -5,7 +5,7 @@ const request = supertest(app);
 const server = 'http://localhost:3000';
 describe('Server page endpoint tests', () => {
   describe('GET /dependencies', () => {
-    xit('Executes a get request to /dependecies endpoint and responds with 200 status', async (done) => {
+    it('Executes a get request to /dependecies endpoint and responds with 200 status', async (done) => {
       const res = await request.get('/dependencies');
       expect(200);
       done();
@@ -13,7 +13,7 @@ describe('Server page endpoint tests', () => {
   });
 
   describe('GET /', () => {
-    xit('Executes a get request to the / endpoint and responds with 200 status', async (done) => {
+    it('Executes a get request to the / endpoint and responds with 200 status', async (done) => {
       const res = await request.get('/');
       expect(200);
       done();
