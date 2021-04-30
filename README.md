@@ -10,9 +10,8 @@ Atriom is a developer tool that visualizes component relationships and shared de
 
 - Generate your application file with Atriom Plugin
 - Visit Atriom.com
-  - Signup / Login
-  - or use Guest Mode
   - Drag and drop your file in the Dropzone to view the architecture of your Module Federated Application
+  - Or you can checkout the dashboard using sample data
 
 ### Prerequisites
 
